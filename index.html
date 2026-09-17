@@ -1098,14 +1098,10 @@
 
           <!-- Price & Action Buttons (Add to Cart & Buy Now) -->
           <div class="space-y-2 pt-2 border-t border-slate-100">
-            <div class="flex items-baseline justify-between">
-              <div>
-                <span class="text-sm sm:text-base lg:text-lg font-black text-amber-600 font-mono">₹${p.price.toLocaleString('en-IN')}</span>
-                <span class="text-[10px] sm:text-xs text-slate-400 line-through ml-1 font-mono">₹${p.originalPrice.toLocaleString('en-IN')}</span>
-              </div>
-              <span class="text-[9px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-md border border-emerald-200">
-                Save ₹${(p.originalPrice - p.price).toLocaleString('en-IN')}
-              </span>
+            <!-- Price Row (Clean Single Line) -->
+            <div class="flex items-baseline space-x-1.5">
+              <span class="text-sm sm:text-base lg:text-lg font-black text-amber-600 font-mono">₹${p.price.toLocaleString('en-IN')}</span>
+              <span class="text-xs text-slate-400 line-through font-mono">₹${p.originalPrice.toLocaleString('en-IN')}</span>
             </div>
 
             <!-- 2 Buttons: ADD TO CART and BUY NOW (Equal Height & Clean Single Line on Mobile) -->
@@ -1532,6 +1528,73 @@
       bannerInterval = setInterval(() => {
         changeBannerSlide(1);
       }, 4500);
+    }
+
+    // Touch Swipe & Finger Drag Support for Mobile and Desktop
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isSwiping = false;
+
+    const bannerRoot = document.getElementById("bannerCarouselRoot");
+    if (bannerRoot) {
+      bannerRoot.addEventListener("touchstart", (e) => {
+        touchStartX = e.touches[0].clientX;
+        touchEndX = touchStartX;
+        isSwiping = true;
+        if (bannerInterval) clearInterval(bannerInterval);
+      }, { passive: true });
+
+      bannerRoot.addEventListener("touchmove", (e) => {
+        if (!isSwiping) return;
+        touchEndX = e.touches[0].clientX;
+      }, { passive: true });
+
+      bannerRoot.addEventListener("touchend", () => {
+        if (!isSwiping) return;
+        isSwiping = false;
+        const diffX = touchStartX - touchEndX;
+        if (Math.abs(diffX) > 40) {
+          if (diffX > 0) {
+            changeBannerSlide(1);
+          } else {
+            changeBannerSlide(-1);
+          }
+        }
+        touchStartX = 0;
+        touchEndX = 0;
+        resetBannerAutoplay();
+      });
+
+      // Mouse drag support for desktop
+      let isMouseDown = false;
+      let mouseStartX = 0;
+      let mouseEndX = 0;
+
+      bannerRoot.addEventListener("mousedown", (e) => {
+        isMouseDown = true;
+        mouseStartX = e.clientX;
+        mouseEndX = e.clientX;
+        if (bannerInterval) clearInterval(bannerInterval);
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        if (!isMouseDown) return;
+        mouseEndX = e.clientX;
+      });
+
+      window.addEventListener("mouseup", () => {
+        if (!isMouseDown) return;
+        isMouseDown = false;
+        const diffX = mouseStartX - mouseEndX;
+        if (Math.abs(diffX) > 45) {
+          if (diffX > 0) {
+            changeBannerSlide(1);
+          } else {
+            changeBannerSlide(-1);
+          }
+        }
+        resetBannerAutoplay();
+      });
     }
 
     window.addEventListener("resize", updateBannerSlider);
