@@ -340,12 +340,9 @@
 
       <!-- 2. E-Commerce Product Catalog Section -->
       <section class="space-y-3.5 pt-1" id="catalogSection">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-1">
-          <div>
-            <h3 class="text-base sm:text-xl lg:text-2xl font-black text-slate-900 tracking-tight">Featured A4 Product Templates</h3>
-            <p class="text-[10px] sm:text-xs text-slate-500 font-medium">Search, filter by category, or click any product to view details &amp; order</p>
-          </div>
-          <span id="catalogCountLabel" class="self-start sm:self-auto text-[10px] sm:text-xs text-amber-700 font-bold font-mono bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full">Showing 16 items</span>
+        <div class="px-1">
+          <h3 class="text-base sm:text-xl lg:text-2xl font-black text-slate-900 tracking-tight">Featured A4 Product Templates</h3>
+          <p class="text-[10px] sm:text-xs text-slate-500 font-medium">Search, filter by category, or click any product to view details &amp; order</p>
         </div>
 
         <!-- Modern Search & Filter Controls Toolbar -->
@@ -1058,7 +1055,6 @@
     // Render 4-Column PC Grid with A4 Proportions and Curved Borders
     function renderProductGrid(items = productsData) {
       const grid = document.getElementById("productGrid");
-      const countLabel = document.getElementById("catalogCountLabel");
       
       if (!items || items.length === 0) {
         grid.innerHTML = `
@@ -1076,7 +1072,6 @@
             </div>
           </div>
         `;
-        if (countLabel) countLabel.innerText = `0 items found`;
         return;
       }
 
@@ -1113,22 +1108,21 @@
               </span>
             </div>
 
-            <!-- 2 Buttons: ADD TO CART and BUY NOW -->
-            <div class="grid grid-cols-2 gap-1.5 pt-0.5">
-              <button type="button" onclick="event.stopPropagation(); addToCart('${p.name}', ${p.price}, '${p.image}')" class="w-full bg-white hover:bg-slate-50 border border-amber-500/80 hover:border-amber-600 text-amber-700 font-black py-2 px-1 rounded-xl text-[9px] sm:text-xs uppercase tracking-tight flex items-center justify-center space-x-1 shadow-xs transition-colors">
-                <i class="fa-solid fa-cart-plus text-[9px]"></i>
-                <span>Add To Cart</span>
+            <!-- 2 Buttons: ADD TO CART and BUY NOW (Equal Height & Clean Single Line on Mobile) -->
+            <div class="grid grid-cols-2 gap-1.5 pt-0.5 items-stretch">
+              <button type="button" onclick="event.stopPropagation(); addToCart('${p.name}', ${p.price}, '${p.image}')" class="w-full h-8 sm:h-9 bg-white hover:bg-slate-50 border border-amber-500/80 hover:border-amber-600 text-amber-700 font-black px-1 rounded-xl text-[9px] sm:text-xs uppercase tracking-tight flex items-center justify-center gap-1 shadow-xs transition-colors whitespace-nowrap overflow-hidden">
+                <i class="fa-solid fa-cart-plus text-[10px] flex-shrink-0"></i>
+                <span class="truncate"><span class="hidden sm:inline">Add To </span>Cart</span>
               </button>
 
-              <a href="buy.html?id=${p.id}" target="_self" onclick="event.stopPropagation();" class="w-full cta-gold-btn shimmer py-2 px-1 rounded-xl text-slate-950 font-black text-[9px] sm:text-xs uppercase tracking-tight flex items-center justify-center space-x-1 shadow-md text-center">
+              <a href="buy.html?id=${p.id}" target="_self" onclick="event.stopPropagation();" class="w-full h-8 sm:h-9 cta-gold-btn shimmer px-1 rounded-xl text-slate-950 font-black text-[9px] sm:text-xs uppercase tracking-tight flex items-center justify-center gap-1 shadow-md text-center whitespace-nowrap overflow-hidden">
                 <span>Buy Now</span>
-                <i class="fa-solid fa-arrow-right text-[8px]"></i>
+                <i class="fa-solid fa-arrow-right text-[8px] flex-shrink-0"></i>
               </a>
             </div>
           </div>
         </div>
       `).join("");
-      if (countLabel) countLabel.innerText = `Showing ${items.length} ${items.length === 1 ? 'item' : 'items'}`;
     }
 
     // Helper: Check if any modal is currently visible
