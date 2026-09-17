@@ -806,8 +806,6 @@
     // Render Current Product
     function renderProduct() {
       document.title = `Buy ${currentProduct.name} | Digital Theme Store`;
-      document.getElementById("breadcrumbCategory").innerText = currentProduct.catLabel;
-      document.getElementById("breadcrumbTitle").innerText = currentProduct.name;
       
       document.getElementById("mainProductImg").src = currentProduct.image;
       document.getElementById("mainProductImg").alt = currentProduct.name;
