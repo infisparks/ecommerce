@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth h-full antialiased">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Digital Theme | Premium E-Commerce Catalog &amp; Revenue Systems</title>
+  <meta name="description" content="Discover high-converting product catalogs and automated revenue systems for manufacturers, retailers &amp; growing businesses." />
+  <meta name="keywords" content="e-commerce catalog, performance marketing, B2B sales funnel, mobile responsive store" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://digitalthemestore.com" />
+  <meta property="og:site_name" content="Digital Theme" />
+  <meta property="og:title" content="Digital Theme | Premium E-Commerce Catalog" />
+  <meta property="og:description" content="Predictable growth. Serious inquiries. Real revenue for Manufacturers, Retailers &amp; Brands." />
+  <meta property="og:image" content="./image/profile.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Digital Theme | Premium E-Commerce Catalog" />
+  <meta name="twitter:description" content="Predictable growth. Serious inquiries. Real revenue for Manufacturers, Retailers &amp; Brands." />
+  <meta name="twitter:image" content="./image/profile.png" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+    body {
+      background-color: #FAF8F5;
+      color: #0f172a;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Light Gold & Elevation Styles */
+    .gold-border-card {
+      border: 2px solid #f59e0b;
+      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.12);
+    }
+
+    .light-card {
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+    }
+
+    /* High-Impact Gold Gradient CTA button */
+    .cta-gold-btn {
+      background: linear-gradient(180deg, #ffce54 0%, #f5a623 100%);
+      box-shadow: 0 4px 18px rgba(245, 166, 35, 0.35);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+    .cta-gold-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(245, 166, 35, 0.45);
+    }
+    .cta-gold-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* WhatsApp Emerald CTA button */
+    .cta-whatsapp-btn {
+      background: linear-gradient(180deg, #25D366 0%, #128C7E 100%);
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.3);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .cta-whatsapp-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+    }
+    .cta-whatsapp-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Shimmer effect */
+    .shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+    .shimmer::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        60deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.45) 50%,
+        transparent 70%
+      );
+      transform: rotate(30deg);
+      animation: shimmer-anim 3.5s infinite;
+    }
+
+    @keyframes shimmer-anim {
+      0% { transform: translate(-100%, -100%) rotate(30deg); }
+      100% { transform: translate(100%, 100%) rotate(30deg); }
+    }
+
+    /* Hide scrollbar for clean horizontal scrolls */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF8F5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #EEDBC5;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #f59e0b;
+    }
+
+    /* Continuous Horizontal Marquee */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: inline-flex;
+      white-space: nowrap;
+      animation: marquee 18s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    .animate-toast-in {
+      animation: toastIn 0.3s ease-out forwards;
+    }
+    @keyframes toastIn {
+      from { opacity: 0; transform: translateY(12px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+  </style>
+
+  <!-- Protection Scripts -->
+  <style>
+    body, html {
+      -webkit-user-select: none !important;
+      -moz-user-select: none !important;
+      -ms-user-select: none !important;
+      user-select: none !important;
+      -webkit-touch-callout: none !important;
+    }
+    input, textarea, select {
+      -webkit-user-select: text !important;
+      user-select: text !important;
+    }
+    img, iframe {
+      -webkit-user-drag: none !important;
+      user-drag: none !important;
+    }
+  </style>
+  <script>
+    (function() {
+      'use strict';
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+      }, true);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'F12' || e.keyCode === 123) {
+          e.preventDefault();
+          return false;
+        }
+        var isCmdOrCtrl = e.ctrlKey || e.metaKey;
+        if (isCmdOrCtrl) {
+          if (e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
+            e.preventDefault();
+            return false;
+          }
+          if (e.key === 'U' || e.key === 'u' || e.key === 'S' || e.key === 's' || e.key === 'P' || e.key === 'p') {
+            e.preventDefault();
+            return false;
+          }
+        }
+      }, true);
+
+      document.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+        return false;
+      }, true);
+    })();
+  </script>
+
+</head>
+<body class="w-full min-h-full bg-[#FAF8F5] text-slate-900 font-sans selection:bg-amber-300 selection:text-slate-950">
+
+  <div class="w-full pb-32 text-slate-900 flex flex-col items-center justify-start min-h-screen antialiased">
+
+    <!-- 1. Top Urgency Ticker Bar -->
+    <div class="w-full bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-white text-[11px] sm:text-xs md:text-sm font-bold py-1.5 shadow-sm z-40 overflow-hidden relative flex items-center">
+      <div class="animate-marquee flex items-center space-x-6">
+        <span class="flex items-center space-x-1.5 flex-shrink-0">
+          <span class="inline-block w-2 h-2 rounded-full bg-white animate-ping"></span>
+          <span>⚡ FESTIVAL SALE: Extra 20% OFF + Free Express Shipping On All Orders Today!</span>
+        </span>
+        <span class="flex items-center space-x-1.5 flex-shrink-0">
+          <span class="inline-block w-2 h-2 rounded-full bg-yellow-300"></span>
+          <span>🔥 Direct WhatsApp Support &amp; Orders: +91 89288 84526</span>
+        </span>
+        <span class="flex items-center space-x-1.5 flex-shrink-0">
+          <span class="inline-block w-2 h-2 rounded-full bg-white animate-ping"></span>
+          <span>⚡ FESTIVAL SALE: Extra 20% OFF + Free Express Shipping On All Orders Today!</span>
+        </span>
+        <span class="flex items-center space-x-1.5 flex-shrink-0">
+          <span class="inline-block w-2 h-2 rounded-full bg-yellow-300"></span>
+          <span>🔥 Direct WhatsApp Support &amp; Orders: +91 89288 84526</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- 2. Header & Store Navigation Bar (Expanded to max-w-7xl for PC) -->
+    <header class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-2.5 pb-2.5 sticky top-0 bg-white/95 backdrop-blur-md z-30 border-b border-slate-200/90 shadow-sm">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-2 sm:space-x-3">
+          <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full overflow-hidden border-2 border-amber-500 shadow-sm flex-shrink-0">
+            <img src="./image/profile.png" alt="Digital Theme Store" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <div class="flex items-center space-x-1.5">
+              <h1 class="text-xs sm:text-base font-black text-slate-900 leading-tight">Digital Theme Store</h1>
+              <span class="bg-amber-500/15 text-amber-700 text-[9px] font-black px-1.5 py-0.2 rounded hidden sm:inline-block">OFFICIAL</span>
+            </div>
+            <p class="text-[9px] sm:text-xs text-amber-600 font-bold">Verified Premium Collection</p>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-2 sm:space-x-3">
+          <!-- WhatsApp Support Button with +91 89288 84526 -->
+          <a href="https://wa.me/918928884526?text=Hello%20Digital%20Theme%20Store,%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" class="cta-whatsapp-btn text-white font-extrabold text-[11px] sm:text-xs px-2.5 sm:px-3.5 py-2 rounded-xl flex items-center space-x-1.5 shadow-md">
+            <i class="fa-brands fa-whatsapp text-xs sm:text-sm"></i>
+            <span class="hidden md:inline">+91 89288 84526</span>
+            <span class="md:hidden">WhatsApp</span>
+          </a>
+
+          <!-- Cart Button -->
+          <button onclick="openCartModal()" class="relative bg-slate-100 hover:bg-slate-200 border border-slate-200 hover:border-amber-400 p-2 sm:px-3 sm:py-2 rounded-xl text-slate-800 flex items-center space-x-1.5 transition-colors">
+            <i class="fa-solid fa-cart-shopping text-amber-600"></i>
+            <span class="text-xs font-black hidden sm:inline">Cart</span>
+            <span id="cartCountBadge" class="absolute -top-1 -right-1 bg-amber-500 text-slate-950 text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center shadow">0</span>
+          </button>
+
+          <!-- Consult Button -->
+          <button onclick="openBookingModal()" class="cta-gold-btn px-3 py-2 rounded-xl text-slate-950 font-black text-[11px] sm:text-xs uppercase tracking-tight shadow-md hidden sm:inline-block">
+            Consult
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6 mx-auto mt-2">
+      
+      <!-- 1. Ultra-Premium Responsive Hero Banner (PC & Mobile Optimized) -->
+      <section class="space-y-3">
+        <!-- Banner Container with Responsive PC / Mobile Switching -->
+        <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-amber-300/80 shadow-[0_10px_30px_rgba(0,0,0,0.06),0_0_20px_rgba(245,166,35,0.08)] bg-white">
+          <!-- Desktop Widescreen Banner (PC & Tablet) -->
+          <div class="hidden sm:block relative w-full aspect-[16/7] md:aspect-[16/6.8] overflow-hidden rounded-3xl group cursor-pointer" onclick="document.getElementById('catalogSection').scrollIntoView({behavior: 'smooth'})" title="Explore Featured Collection">
+            <img src="image/hero-pc.webp" alt="Digital Theme Store Featured Collection" class="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700" />
+          </div>
+
+          <!-- Mobile Optimized Vertical Banner (Mobile Screens) -->
+          <div class="block sm:hidden relative w-full aspect-[9/13] overflow-hidden rounded-2xl group cursor-pointer" onclick="document.getElementById('catalogSection').scrollIntoView({behavior: 'smooth'})" title="Tap to Explore Featured Collection">
+            <img src="image/hero-mobile.webp" alt="Digital Theme Store Curated Tech Gadgets" class="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-700" />
+          </div>
+        </div>
+
+        <!-- 3-Item Quick Trust Grid -->
+        <div class="grid grid-cols-3 gap-2 sm:gap-3.5 pt-0.5">
+          <div class="bg-white border border-slate-200/90 rounded-xl sm:rounded-2xl py-2 px-2 flex items-center justify-center gap-1.5 text-center shadow-xs">
+            <i class="fa-solid fa-truck-fast text-amber-600 text-xs sm:text-sm"></i>
+            <span class="text-[10px] sm:text-xs font-bold text-slate-800 truncate">Express Delivery</span>
+          </div>
+          <div class="bg-white border border-slate-200/90 rounded-xl sm:rounded-2xl py-2 px-2 flex items-center justify-center gap-1.5 text-center shadow-xs">
+            <i class="fa-solid fa-shield-halved text-amber-600 text-xs sm:text-sm"></i>
+            <span class="text-[10px] sm:text-xs font-bold text-slate-800 truncate">Direct Warranty</span>
+          </div>
+          <div class="bg-white border border-slate-200/90 rounded-xl sm:rounded-2xl py-2 px-2 flex items-center justify-center gap-1.5 text-center shadow-xs">
+            <i class="fa-brands fa-whatsapp text-emerald-600 text-xs sm:text-sm"></i>
+            <span class="text-[10px] sm:text-xs font-bold text-slate-800 truncate">WhatsApp Order</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. E-Commerce Product Catalog Section -->
+      <section class="space-y-4 pt-1" id="catalogSection">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-1">
+          <div>
+            <h3 class="text-base sm:text-xl lg:text-2xl font-black text-slate-900 tracking-tight">Featured A4 Product Templates</h3>
+            <p class="text-[10px] sm:text-xs text-slate-500 font-medium">Search, filter by category, or click any product to view details &amp; order</p>
+          </div>
+          <span id="catalogCountLabel" class="self-start sm:self-auto text-[10px] sm:text-xs text-amber-700 font-bold font-mono bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full">Showing 16 items</span>
+        </div>
+
+        <!-- Modern Search & Filter Controls Toolbar -->
+        <div class="bg-white border border-slate-200/90 rounded-2xl sm:rounded-3xl p-3 sm:p-4 shadow-sm space-y-3">
+          <div class="flex flex-col md:flex-row items-stretch md:items-center gap-2.5 sm:gap-3">
+            <!-- Search Input Box -->
+            <div class="relative flex-1">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+                <i class="fa-solid fa-magnifying-glass text-sm"></i>
+              </div>
+              <input 
+                type="text" 
+                id="catalogSearchInput" 
+                placeholder="Search products by name, camera, drone, watch, audio, 4K..." 
+                oninput="applyCatalogFilters()" 
+                class="w-full pl-10 pr-10 py-2.5 sm:py-3 bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all font-medium"
+              />
+              <button 
+                type="button" 
+                id="clearSearchBtn" 
+                onclick="clearSearchInput()" 
+                class="hidden absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-600 transition-colors cursor-pointer"
+                title="Clear search"
+              >
+                <i class="fa-solid fa-circle-xmark text-sm"></i>
+              </button>
+            </div>
+
+            <!-- Category Select Dropdown (for quick mobile & compact switching) -->
+            <div class="flex items-center gap-2 flex-shrink-0">
+              <div class="relative w-full md:w-auto">
+                <select 
+                  id="categorySelectDropdown" 
+                  onchange="onCategorySelectChange(this.value)" 
+                  class="w-full md:w-56 appearance-none bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl py-2.5 sm:py-3 pl-3.5 pr-9 text-xs sm:text-sm font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 cursor-pointer transition-all"
+                >
+                  <option value="all">All Categories (16)</option>
+                  <option value="electronics">⚡ Action Cameras &amp; Audio (7)</option>
+                  <option value="security">🛡️ Security &amp; Body Cams (2)</option>
+                  <option value="gadgets">🎮 Drones &amp; Smart Gadgets (4)</option>
+                  <option value="fashion">💎 Fashion &amp; Luxury (1)</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-500">
+                  <i class="fa-solid fa-chevron-down text-xs"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category Filter Pills (Desktop & Tablet Quick Tabs) -->
+          <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pt-1 border-t border-slate-100">
+            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex-shrink-0 mr-1 hidden sm:inline">Category:</span>
+            <button onclick="filterCatalog('all')" id="catBtnAll" class="cat-pill px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-black bg-gradient-to-r from-amber-500 to-amber-600 text-white border border-amber-500 shadow-md flex-shrink-0 transition-all">
+              All (16)
+            </button>
+            <button onclick="filterCatalog('electronics')" id="catBtnElec" class="cat-pill px-2.5 sm:px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-extrabold bg-white text-slate-700 border border-slate-200 hover:border-amber-400 hover:text-slate-900 flex-shrink-0 transition-all">
+              ⚡ Action Cameras &amp; Audio
+            </button>
+            <button onclick="filterCatalog('security')" id="catBtnSec" class="cat-pill px-2.5 sm:px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-extrabold bg-white text-slate-700 border border-slate-200 hover:border-amber-400 hover:text-slate-900 flex-shrink-0 transition-all">
+              🛡️ Security &amp; Body Cams
+            </button>
+            <button onclick="filterCatalog('gadgets')" id="catBtnGad" class="cat-pill px-2.5 sm:px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-extrabold bg-white text-slate-700 border border-slate-200 hover:border-amber-400 hover:text-slate-900 flex-shrink-0 transition-all">
+              🎮 Drones &amp; Smart Gadgets
+            </button>
+            <button onclick="filterCatalog('fashion')" id="catBtnFashion" class="cat-pill px-2.5 sm:px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-extrabold bg-white text-slate-700 border border-slate-200 hover:border-amber-400 hover:text-slate-900 flex-shrink-0 transition-all">
+              💎 Fashion &amp; Luxury
+            </button>
+          </div>
+        </div>
+
+        <!-- 4-Column Product Grid on PC (4 templates per row) with curved borders -->
+        <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-5 lg:gap-6">
+          <!-- Dynamically populated via renderProductGrid() -->
+        </div>
+      </section>
+
+      <!-- Strategy Banner -->
+      <section class="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-950 text-white rounded-3xl p-5 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl border border-slate-700">
+        <div class="space-y-1.5 text-left">
+          <span class="text-amber-400 text-[10px] sm:text-xs font-black uppercase tracking-wider">Enterprise &amp; B2B Concierge</span>
+          <h3 class="text-base sm:text-2xl font-black">Looking for Custom Templates or Bulk Inquiries?</h3>
+          <p class="text-xs sm:text-sm text-slate-300">Connect directly with our revenue specialists on WhatsApp for instant wholesale quote and inventory confirmation.</p>
+        </div>
+        <div class="flex items-center space-x-2 sm:space-x-3 flex-shrink-0 w-full md:w-auto">
+          <a href="https://wa.me/918928884526?text=Hi%20Digital%20Theme,%20I%20would%20like%20to%20discuss%20bulk%20orders%20and%20commercial%20templates." target="_blank" class="w-full md:w-auto cta-whatsapp-btn text-white font-black text-xs sm:text-sm py-3 px-5 rounded-2xl flex items-center justify-center space-x-2 shadow-lg">
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>Discuss on WhatsApp (+91 89288 84526)</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="text-center text-slate-500 text-xs sm:text-sm py-8 space-y-2 border-t border-slate-200">
+        <p class="font-bold text-slate-700">Digital Theme • E-Commerce &amp; Revenue Systems</p>
+        <p>© <span id="currentYearSpan">2026</span> Digital Theme. All Rights Reserved.</p>
+        <p class="text-[11px] sm:text-xs text-slate-500">
+          Official WhatsApp Support: <a href="https://wa.me/918928884526" target="_blank" class="text-emerald-600 font-bold hover:underline">+91 89288 84526</a>
+        </p>
+      </footer>
+    </main>
+
+    <!-- 3. Ultra-Luxury Single Product Detail Sheet / Modal -->
+    <div id="productModal" class="hidden fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 transition-all duration-300">
+      <div class="bg-white text-slate-900 border border-slate-200 w-full max-w-lg rounded-t-3xl sm:rounded-3xl p-4 sm:p-6 shadow-[0_25px_60px_rgba(0,0,0,0.25)] relative max-h-[92vh] flex flex-col overflow-hidden animate-toast-in">
+        
+        <!-- Header -->
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-3 flex-shrink-0">
+          <div class="flex items-center space-x-2">
+            <span id="modalCatTag" class="bg-amber-500/10 border border-amber-500/30 text-amber-700 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">Electronics</span>
+            <span class="text-[10px] sm:text-xs font-bold text-emerald-600 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span> In Stock • Ships Today
+            </span>
+          </div>
+          <button onclick="closeProductModal()" class="w-8 h-8 rounded-full bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-900 hover:border-amber-400 flex items-center justify-center text-sm transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Modal Body (Scrollable) -->
+        <div class="space-y-4 overflow-y-auto flex-1 pr-1 custom-scrollbar text-left">
+          
+          <!-- Square Image Showcase with Curved Borders -->
+          <div class="relative w-full aspect-square max-h-72 sm:max-h-80 rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 flex items-center justify-center p-3 group shadow-inner">
+            <img id="modalProductImg" src="product/q7-4k-pocket-gimbal-camera.webp" alt="Product Image" class="w-full h-full object-contain rounded-xl drop-shadow-md group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute bottom-2.5 left-2.5 bg-white/95 backdrop-blur-md border border-slate-200 px-2.5 py-1 rounded-lg text-[10px] font-bold text-slate-700 flex items-center gap-1 shadow-xs">
+              <i class="fa-solid fa-shield-halved text-amber-600"></i>
+              <span>100% Genuine Direct Import</span>
+            </div>
+          </div>
+
+          <!-- Title & Star Ratings -->
+          <div class="space-y-1">
+            <h3 id="modalProductTitle" class="text-base sm:text-xl font-black text-slate-900 leading-snug">Q7 4K Pocket Digital Gimbal Camera</h3>
+            <div class="flex items-center space-x-2 text-[11px] sm:text-xs">
+              <div class="flex items-center text-amber-500 space-x-0.5">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span id="modalRatingScore" class="font-extrabold text-slate-900">4.8</span>
+              <span class="text-slate-400">•</span>
+              <span id="modalReviewCount" class="text-amber-700 font-bold">142 Verified Customer Reviews</span>
+            </div>
+          </div>
+
+          <!-- Pricing Box -->
+          <div class="bg-slate-50 p-3 rounded-2xl border border-slate-200/90 flex items-center justify-between">
+            <div>
+              <div class="flex items-baseline space-x-2">
+                <span id="modalProductPrice" class="text-xl sm:text-2xl font-black text-amber-600 font-mono">₹4,499</span>
+                <span id="modalOriginalPrice" class="text-xs sm:text-sm text-slate-400 line-through font-semibold font-mono">₹6,999</span>
+              </div>
+              <p class="text-[10px] text-emerald-600 font-bold flex items-center gap-1 mt-0.5">
+                <i class="fa-solid fa-tag"></i> <span id="modalSavingsText">Save ₹2,500 (Direct Manufacturer Discount)</span>
+              </p>
+            </div>
+            <div class="text-right text-[10px] text-slate-500 font-medium">
+              <span class="block text-slate-700 font-bold">Free Express Delivery</span>
+              <span>All Taxes Included</span>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="space-y-1.5">
+            <h4 class="text-xs font-black text-slate-800 uppercase tracking-wider">Product Overview</h4>
+            <p id="modalProductDesc" class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+              180° rotatable 4K pocket digital vlog camera with high-response touch screen.
+            </p>
+          </div>
+
+          <!-- Key Highlights / Specs -->
+          <div class="space-y-2 bg-slate-50 p-3 rounded-2xl border border-slate-200/80">
+            <h4 class="text-xs font-black text-amber-700 uppercase tracking-wider flex items-center gap-1.5">
+              <i class="fa-solid fa-bolt text-amber-600"></i> Key Highlights &amp; Specifications
+            </h4>
+            <ul id="modalFeatureList" class="space-y-1.5 text-[11px] sm:text-xs text-slate-700">
+              <!-- Dynamically populated -->
+            </ul>
+          </div>
+
+          <!-- Variant / Color Selector -->
+          <div class="space-y-1.5">
+            <label class="block text-xs font-bold text-slate-700">Select Edition / Color:</label>
+            <div id="modalVariantContainer" class="flex items-center flex-wrap gap-2">
+              <!-- Dynamically populated variant chips -->
+            </div>
+          </div>
+
+          <!-- Quantity Selector -->
+          <div class="flex items-center justify-between bg-slate-50 border border-slate-200 p-2.5 rounded-xl">
+            <span class="text-xs font-bold text-slate-700">Quantity</span>
+            <div class="flex items-center space-x-3">
+              <button onclick="changeModalQty(-1)" class="w-7 h-7 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold flex items-center justify-center text-sm transition-colors">-</button>
+              <span id="modalQtyDisplay" class="text-sm font-mono font-black text-slate-900 w-6 text-center">1</span>
+              <button onclick="changeModalQty(1)" class="w-7 h-7 rounded-lg bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold flex items-center justify-center text-sm transition-colors">+</button>
+            </div>
+          </div>
+
+          <!-- Assurance Badges Grid -->
+          <div class="grid grid-cols-3 gap-2 pt-1 text-center">
+            <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-2">
+              <i class="fa-solid fa-rotate-left text-amber-600 text-xs mb-1 block"></i>
+              <span class="text-[9px] font-bold text-slate-700 block">7 Days Return</span>
+            </div>
+            <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-2">
+              <i class="fa-solid fa-certificate text-amber-600 text-xs mb-1 block"></i>
+              <span class="text-[9px] font-bold text-slate-700 block">1 Year Warranty</span>
+            </div>
+            <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-2">
+              <i class="fa-solid fa-hand-holding-dollar text-emerald-600 text-xs mb-1 block"></i>
+              <span class="text-[9px] font-bold text-slate-700 block">COD Available</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sticky Footer Action Buttons: Add To Cart, Buy Now, and Discuss on WhatsApp -->
+        <div class="border-t border-slate-100 pt-3 mt-2 space-y-2 flex-shrink-0">
+          <div class="grid grid-cols-2 gap-2">
+            <button onclick="addCurrentModalToCart()" class="bg-white hover:bg-slate-50 border border-amber-500 text-amber-700 font-extrabold py-2.5 px-3 rounded-2xl text-xs sm:text-sm flex items-center justify-center space-x-1.5 transition-colors shadow-xs">
+              <i class="fa-solid fa-cart-plus text-xs"></i>
+              <span>Add To Cart</span>
+            </button>
+            <button onclick="openModalBuyNowPage()" class="cta-gold-btn shimmer py-2.5 px-3 rounded-2xl text-slate-950 font-black text-xs sm:text-sm uppercase tracking-tight flex items-center justify-center space-x-1.5 shadow-lg">
+              <i class="fa-solid fa-bolt text-xs"></i>
+              <span>Buy Now</span>
+            </button>
+          </div>
+          <button onclick="buyCurrentModalNowWhatsApp()" class="w-full cta-whatsapp-btn py-2.5 px-3 rounded-xl text-white font-extrabold text-xs sm:text-sm flex items-center justify-center space-x-2 shadow-md">
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>Discuss on WhatsApp (+91 89288 84526)</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 4. Ultra-Premium Shopping Cart Drawer & Modal -->
+    <div id="cartModal" class="hidden fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-4 transition-all duration-300">
+      <div class="bg-white text-slate-900 border border-slate-200 w-full max-w-md rounded-t-3xl sm:rounded-3xl p-4 sm:p-6 shadow-[0_25px_60px_rgba(0,0,0,0.25)] relative flex flex-col max-h-[92vh] animate-toast-in">
+        
+        <!-- Cart Header -->
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-3 flex-shrink-0">
+          <div class="flex items-center space-x-2">
+            <span class="bg-amber-500/15 border border-amber-500/30 text-amber-700 text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider">Your Cart</span>
+            <span id="cartHeaderCount" class="text-xs font-bold text-slate-600 font-mono">(0 items)</span>
+          </div>
+          <button onclick="closeCartModal()" class="w-8 h-8 rounded-full bg-slate-100 border border-slate-200 text-slate-500 hover:text-slate-900 hover:border-amber-400 flex items-center justify-center text-sm transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- Festival Offer Notice -->
+        <div class="bg-amber-50 border border-amber-200/80 rounded-xl px-3 py-2 mb-3 flex items-center justify-between text-[11px] text-amber-800 font-bold flex-shrink-0">
+          <div class="flex items-center space-x-1.5">
+            <i class="fa-solid fa-bolt text-amber-600"></i>
+            <span>Festival Offer: Extra Free Delivery Applied</span>
+          </div>
+          <span class="bg-amber-500 text-slate-950 text-[9px] font-black px-1.5 py-0.2 rounded">APPLIED</span>
+        </div>
+
+        <!-- Cart Items List (Scrollable) -->
+        <div id="cartItemsList" class="space-y-2.5 overflow-y-auto flex-1 pr-1 custom-scrollbar text-left">
+          <!-- Cart items injected dynamically -->
+        </div>
+
+        <!-- Order Breakdown & WhatsApp Checkout -->
+        <div class="border-t border-slate-100 pt-3 mt-3 space-y-3 flex-shrink-0">
+          <div class="space-y-1.5 text-xs text-slate-600">
+            <div class="flex items-center justify-between">
+              <span>Subtotal:</span>
+              <span id="cartSubtotalPrice" class="font-mono font-bold text-slate-900">₹0</span>
+            </div>
+            <div class="flex items-center justify-between text-emerald-600 font-bold">
+              <span>Express Shipping:</span>
+              <span class="uppercase">FREE (₹0)</span>
+            </div>
+            <div class="flex items-center justify-between text-sm font-black text-slate-900 pt-1 border-t border-slate-100">
+              <span>Estimated Total:</span>
+              <span id="cartTotalPrice" class="text-amber-600 text-lg font-black font-mono">₹0</span>
+            </div>
+          </div>
+
+          <button onclick="checkoutViaWhatsApp()" class="w-full cta-gold-btn shimmer py-3.5 px-4 rounded-2xl text-slate-950 font-black text-xs sm:text-sm uppercase tracking-wide flex items-center justify-center space-x-2 shadow-xl cursor-pointer">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>CONFIRM &amp; ORDER ON WHATSAPP</span>
+          </button>
+
+          <a href="https://wa.me/918928884526?text=Hi%20Digital%20Theme,%20I%20have%20questions%20regarding%20my%20cart%20items." target="_blank" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-2 rounded-xl text-xs flex items-center justify-center space-x-1.5 transition-colors">
+            <i class="fa-brands fa-whatsapp text-emerald-600"></i>
+            <span>Discuss on WhatsApp (+91 89288 84526)</span>
+          </a>
+
+          <div class="flex items-center justify-center space-x-3 text-[10px] text-slate-500 font-medium pt-0.5">
+            <span class="flex items-center gap-1"><i class="fa-solid fa-lock text-emerald-600"></i> 256-Bit SSL</span>
+            <span>•</span>
+            <span class="flex items-center gap-1"><i class="fa-solid fa-truck-fast text-amber-600"></i> 24h Express Dispatch</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="hidden fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
+      <div id="bookingStep1" class="bg-white text-slate-900 border border-slate-200 w-full max-w-md rounded-3xl p-4 sm:p-6 shadow-2xl relative max-h-[92vh] overflow-y-auto">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3 mb-3">
+          <div class="flex items-center space-x-2">
+            <span class="bg-amber-500/15 border border-amber-500/30 text-amber-700 text-[10px] font-black px-2.5 py-0.5 rounded-full">Consultation</span>
+            <span class="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wide">Fast 30-Sec Booking</span>
+          </div>
+          <button onclick="closeBookingModal()" class="w-7 h-7 rounded-full text-slate-400 hover:text-slate-900 hover:bg-slate-100 flex items-center justify-center text-sm">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <form id="contactForm" onsubmit="handleStep1Submit(event)" class="space-y-3.5 text-left">
+          <div class="text-center space-y-1">
+            <h3 class="text-base sm:text-xl font-black text-slate-900 leading-snug">Claim Your 1-on-1 Growth Consultation</h3>
+            <p class="text-[11px] sm:text-xs text-slate-500 font-medium">Enter your details to reserve your custom revenue strategy session</p>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Full Name <span class="text-amber-600">*</span></label>
+            <input type="text" id="inputFullName" required placeholder="Enter your full name" class="w-full bg-slate-50 border border-slate-200 focus:border-amber-500 rounded-xl px-3.5 py-2.5 text-sm text-slate-900 placeholder-slate-400 outline-none" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">WhatsApp Phone Number <span class="text-amber-600">*</span></label>
+            <div class="flex items-center bg-slate-50 border border-slate-200 focus-within:border-amber-500 rounded-xl overflow-hidden">
+              <div class="px-3 py-2.5 bg-slate-100 border-r border-slate-200 text-xs font-bold text-slate-600">🇮🇳 +91</div>
+              <input type="tel" id="inputPhone" inputmode="numeric" pattern="[0-9]*" maxlength="10" required placeholder="8928884526" class="w-full px-3 py-2.5 text-sm text-slate-900 bg-transparent placeholder-slate-400 focus:outline-none font-mono" />
+            </div>
+          </div>
+
+          <button type="submit" class="w-full cta-gold-btn shimmer rounded-2xl p-3.5 text-center cursor-pointer shadow-xl mt-4">
+            <div class="text-sm font-black text-slate-950 flex items-center justify-center space-x-2 uppercase tracking-wide">
+              <span>CONFIRM &amp; CONNECT ON WHATSAPP</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </div>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sticky Mobile Floating Bottom Cart Bar -->
+    <div id="stickyCartBar" class="fixed bottom-2.5 left-2.5 right-2.5 sm:bottom-5 sm:left-1/2 sm:-translate-x-1/2 sm:w-full sm:max-w-md z-40 transition-all duration-300 translate-y-24 opacity-0 pointer-events-none">
+      <div class="bg-white/95 border border-amber-400/90 rounded-2xl p-2 sm:p-2.5 shadow-[0_10px_35px_rgba(245,166,35,0.25)] backdrop-blur-xl flex items-center justify-between gap-2 text-slate-900">
+        <div class="flex items-center space-x-2 min-w-0 pl-1">
+          <div class="w-8 h-8 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-600 flex items-center justify-center font-black flex-shrink-0 text-xs">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </div>
+          <div class="flex items-baseline space-x-1.5 whitespace-nowrap overflow-hidden">
+            <span id="stickyCartTotal" class="text-sm sm:text-base font-black text-amber-600 font-mono">₹0</span>
+            <span id="stickyCartCount" class="text-[11px] font-bold text-slate-500 font-sans truncate">(0 items)</span>
+          </div>
+        </div>
+
+        <button onclick="openCartModal()" class="cta-gold-btn shimmer py-2 px-3.5 sm:px-4 rounded-xl text-slate-950 font-black text-[11px] sm:text-xs uppercase tracking-tight flex items-center space-x-1 shadow-md flex-shrink-0 whitespace-nowrap">
+          <span>Checkout</span>
+          <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Live Social Proof Toast -->
+    <div id="socialProofToast" class="hidden fixed bottom-16 sm:bottom-6 left-2.5 sm:left-6 z-40 max-w-[210px] sm:max-w-[250px] transition-all duration-300 animate-toast-in pointer-events-none">
+      <div class="bg-white border border-slate-200 text-slate-900 rounded-xl p-2.5 shadow-[0_6px_20px_rgba(0,0,0,0.12)] backdrop-blur-md flex items-center space-x-2">
+        <div class="w-7 h-7 rounded-full bg-gradient-to-tr from-amber-500 to-amber-400 text-slate-950 flex items-center justify-center flex-shrink-0 text-xs font-black shadow-xs border border-amber-300/40">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+        <div class="text-[10px] sm:text-[11px] overflow-hidden leading-tight space-y-0.5">
+          <div class="flex items-center space-x-1">
+            <span id="toastName" class="font-extrabold text-slate-900 truncate max-w-[120px]">Rahul Sharma</span>
+            <span class="text-[9px] text-emerald-700 font-bold bg-emerald-50 px-1 py-0.2 rounded border border-emerald-300 flex-shrink-0">✓</span>
+          </div>
+          <p id="toastAction" class="text-amber-600 font-bold truncate">Added to Cart</p>
+          <div class="flex items-center space-x-1 text-[9px] text-slate-500 font-mono truncate">
+            <span id="toastLocation" class="truncate max-w-[90px]">Mumbai</span>
+            <span>•</span>
+            <span id="toastTime">Just now</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script>
+    document.getElementById("currentYearSpan").innerText = new Date().getFullYear();
+    const WHATSAPP_PHONE = "918928884526"; // User requested: +91 89288 84526
+
+    // Comprehensive 16 A4 Product Templates Master Database
+    const productsData = [
+      {
+        id: 2,
+        name: "Q7 4K Pocket Digital Gimbal Camera",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "4K Ultra HD",
+        badgeColor: "bg-blue-600 text-white",
+        rating: 4.8,
+        reviews: 184,
+        price: 4499,
+        originalPrice: 6999,
+        image: "product/q7-4k-pocket-gimbal-camera.webp",
+        description: "180° rotatable 4K pocket digital vlog camera with high-response touch screen, high frame rate recording, lightweight portable build for travel and streaming.",
+        features: [
+          "180° Smooth Mechanical Rotatable Camera Lens",
+          "4K Ultra HD High Frame Rate Crystal Video",
+          "Intuitive Touch Screen Interface & Real-time Live View",
+          "Long-Lasting High Capacity Rechargeable Battery"
+        ],
+        variants: ["Midnight Matte Black", "Obsidian Grey"]
+      },
+      {
+        id: 3,
+        name: "M3 360° Action Camera & Mount Kit",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "360° Panoramic",
+        badgeColor: "bg-orange-600 text-white",
+        rating: 4.9,
+        reviews: 142,
+        price: 5999,
+        originalPrice: 8999,
+        image: "product/m3-360-action-camera-kit.webp",
+        description: "360° dual-lens panoramic 4K action camera with Wi-Fi live preview, waterproof casing, handlebar bike mounts, and external clip-on microphone kit.",
+        features: [
+          "360° Wide Angle Panoramic Dual Lens Sensor",
+          "4K Ultra HD Action Capture with Wi-Fi Connectivity",
+          "Complete Outdoor Sports & Bike Handlebar Mount Kit",
+          "Water-Resistant Ruggedized Enclosure for Extreme Action"
+        ],
+        variants: ["Standard Pro Kit", "Adventure Mic Bundle"]
+      },
+      {
+        id: 4,
+        name: "M11W Magnetic 4K Action Camera",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "IPX7 Waterproof",
+        badgeColor: "bg-emerald-600 text-white",
+        rating: 4.7,
+        reviews: 168,
+        price: 3299,
+        originalPrice: 4999,
+        image: "product/m11w-magnetic-4k-action-camera.webp",
+        description: "Ultra-compact magnetic wearable 4K action cam with 120° wide-angle lens, smooth 6-axis stabilization, and waterproof housing for water sports and rides.",
+        features: [
+          "Ultra-Lightweight Magnetic Quick-Snap Mount Support",
+          "IPX7 Waterproof Direct Submersion Architecture",
+          "120° Wide Angle Lens with Gyro Smooth Video",
+          "One-Click Fast Capture with Long Battery Life"
+        ],
+        variants: ["Stealth Black", "Active Orange Accent"]
+      },
+      {
+        id: 5,
+        name: "Smart R/C App-Controlled Drift Car",
+        category: "gadgets",
+        catLabel: "Drones & Smart Gadgets",
+        badge: "App Wi-Fi",
+        badgeColor: "bg-indigo-600 text-white",
+        rating: 4.8,
+        reviews: 94,
+        price: 1999,
+        originalPrice: 3499,
+        image: "product/smart-rc-drift-car.webp",
+        description: "High-speed 360° radio control racing supercar with smartphone iOS/Android Wi-Fi app remote, dual drive motors, and rechargeable fast-charge battery.",
+        features: [
+          "Real-Time Wi-Fi App Control via iOS & Android Phone",
+          "360° Drift & High-Speed Multi-Directional Stunts",
+          "Shock-Absorbent Durable Aerodynamic Racing Body",
+          "USB Fast Rechargeable Lithium-Ion Battery Included"
+        ],
+        variants: ["British Racing Green", "Speed Red", "Metallic Black"]
+      },
+      {
+        id: 6,
+        name: "L16 Law Enforcement Body Camera",
+        category: "security",
+        catLabel: "Security & Body Cams",
+        badge: "Night Vision",
+        badgeColor: "bg-slate-900 text-amber-400",
+        rating: 4.9,
+        reviews: 112,
+        price: 2899,
+        originalPrice: 4500,
+        image: "product/l16-law-enforcement-body-camera.webp",
+        description: "Professional 1080P body-worn surveillance camera with 170° wide-angle lens, infrared night vision, auto motion detection, and TF card support up to 256GB.",
+        features: [
+          "1080P Full HD Video with 170° Ultra-Wide Viewing Angle",
+          "Automatic Infrared Night Vision for Low-Light Recording",
+          "Smart Motion Detection & Loop Recording (Never Miss Moments)",
+          "Supports TF MicroSD Storage Up to 256GB"
+        ],
+        variants: ["Heavy-Duty Black", "Tactical Clip Edition"]
+      },
+      {
+        id: 7,
+        name: "5K Ultra HD Bike & Helmet Camera",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "5K 30FPS",
+        badgeColor: "bg-amber-500 text-slate-950",
+        rating: 4.9,
+        reviews: 156,
+        price: 4799,
+        originalPrice: 7299,
+        image: "product/5k-ultra-hd-bike-helmet-camera.webp",
+        description: "Heavy-duty 5K motorcycle and bicycle sports camera with built-in LED headlight flashlight, loop recording, waterproof aluminum housing, and mounting gear.",
+        features: [
+          "5K 30FPS Ultra-Crisp High Resolution Recording",
+          "Integrated High-Lumen Tactical LED Night Flashlight",
+          "Wi-Fi Connectivity with Live Mobile Phone Sync",
+          "Complete Motorcycle Handlebar & Helmet Bracket Accessories"
+        ],
+        variants: ["Standard Rider Kit", "Pro Touring Bundle"]
+      },
+      {
+        id: 8,
+        name: "Dual Screen 4K Ultra HD Action Cam",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "Dual Screen",
+        badgeColor: "bg-red-600 text-white",
+        rating: 4.8,
+        reviews: 205,
+        price: 3699,
+        originalPrice: 5499,
+        image: "product/dual-screen-4k-action-camera.webp",
+        description: "4K sports action camera featuring front selfie screen + 2.0\" rear IPS display, Wi-Fi connectivity, dashcam driving mode, and 30m waterproof casing.",
+        features: [
+          "Dual Color Screens: 2.0\" IPS Rear + Front Selfie Display",
+          "4K Ultra HD Sensor with Wide Angle Dynamic Lens",
+          "Multi-Scenario: Diving (30m), Cycling, Hiking & Dash Cam",
+          "Wireless Mobile Remote Control with Android & iOS App"
+        ],
+        variants: ["Matte Black", "Silver Edition"]
+      },
+      {
+        id: 9,
+        name: "CS12 Security HD Body Camera",
+        category: "security",
+        catLabel: "Security & Body Cams",
+        badge: "1080P FHD",
+        badgeColor: "bg-slate-900 text-white",
+        rating: 4.8,
+        reviews: 89,
+        price: 2499,
+        originalPrice: 3999,
+        image: "product/cs12-security-hd-body-camera.webp",
+        description: "Compact personal protection body camera with 140° wide view, dual high-lumen LED night assist lights, loop recording, and all-day endurance battery.",
+        features: [
+          "1080P Full HD Video Clarity with 140° Wide Lens",
+          "Dual LED Security Night Vision & Flashlight Array",
+          "Long Battery Life for All-Day Security Recording",
+          "Supports High Speed TF Card Expansion Up to 128GB"
+        ],
+        variants: ["Security Black", "Clip Pro Edition"]
+      },
+      {
+        id: 10,
+        name: "LK-035 Handheld Camera with Cooling Fan",
+        category: "gadgets",
+        catLabel: "Drones & Smart Gadgets",
+        badge: "Turbine Fan",
+        badgeColor: "bg-purple-600 text-white",
+        rating: 4.8,
+        reviews: 73,
+        price: 2799,
+        originalPrice: 4299,
+        image: "product/lk035-handheld-camera-cooling.webp",
+        description: "2-in-1 portable 1080P HD vlog camera equipped with an integrated turbine cooling fan with digital speed display and 180° rotating lens head.",
+        features: [
+          "Built-in Powerful Turbine Cooling Fan with Digital LED Meter",
+          "180° Rotating Gimbal Camera Head for Instant Selfies",
+          "1080P HD Clear Video with Ergonomic Grip",
+          "Ideal for Summer Travel, Outdoor Vlogging & Festivals"
+        ],
+        variants: ["Neon Pink Trim", "Electric Blue", "Obsidian Black"]
+      },
+      {
+        id: 11,
+        name: "FPV Clip-on Glasses Smart Camera Kit",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "FPV POV",
+        badgeColor: "bg-cyan-700 text-white",
+        rating: 4.9,
+        reviews: 130,
+        price: 2999,
+        originalPrice: 4999,
+        image: "product/fpv-clip-glasses-smart-camera.webp",
+        description: "Hands-free first-person-view 1080P micro camera module designed to clip securely onto any sunglasses or prescription eyewear for POV cycling and sports.",
+        features: [
+          "True First Person View (FPV) True Eye-Level Recording",
+          "Universal Clip Mount Fits Directly onto Any Eyewear Frame",
+          "1080P HD Lens with Built-in Color Display Screen",
+          "Includes Hard Carrying Case, Eyewear Frame & Charging Cable"
+        ],
+        variants: ["Arctic White / Black", "Titanium Grey"]
+      },
+      {
+        id: 12,
+        name: "X20 6-Axis Gimbal Action Camera",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "6-Axis Gyro",
+        badgeColor: "bg-red-600 text-white",
+        rating: 4.8,
+        reviews: 147,
+        price: 3899,
+        originalPrice: 5999,
+        image: "product/x20-6axis-gimbal-camera.webp",
+        description: "Compact pocket gimbal camera featuring hardware 6-axis gyro stabilization, wide-angle lens, live color monitor, and dedicated waterproof case.",
+        features: [
+          "Hardware 6-Axis Electronic Image Stabilization (EIS)",
+          "1080P Full HD with Wide Dynamic Range (WDR)",
+          "Pocket-Sized Ergonomic Handle with Preview Monitor",
+          "Waterproof Casing Included for Snorkeling and Surfing"
+        ],
+        variants: ["Gold Ring Edition", "Stealth Carbon"]
+      },
+      {
+        id: 13,
+        name: "T1 Mini FPV Aircraft Drone with Screen Remote",
+        category: "gadgets",
+        catLabel: "Drones & Smart Gadgets",
+        badge: "Screen Remote",
+        badgeColor: "bg-blue-600 text-white",
+        rating: 4.9,
+        reviews: 192,
+        price: 4299,
+        originalPrice: 6500,
+        image: "product/t1-mini-fpv-aircraft-drone.webp",
+        description: "Aerodynamic mini quadcopter drone with 1080P HD camera, 360° ducted propeller guards, stable altitude hold, and integrated video display remote controller.",
+        features: [
+          "Dedicated Screen Controller - No Phone Required to Fly!",
+          "360° Fully Enclosed Ducted Safety Propeller Guards",
+          "1080P HD Camera with Real-Time Video Transmission",
+          "One-Key Takeoff & Landing with Barometer Altitude Hold"
+        ],
+        variants: ["Alpine White", "Stealth Grey"]
+      },
+      {
+        id: 14,
+        name: "boAt Lunar Orbit 2 HD Smartwatch",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "Top Brand",
+        badgeColor: "bg-red-700 text-white",
+        rating: 4.9,
+        reviews: 310,
+        price: 1799,
+        originalPrice: 3999,
+        image: "product/boat-lunar-orbit-2-smartwatch.webp",
+        description: "Official boAt Lunar Orbit 2 smartwatch with 1.39\" HD display, 2.5D curved animated watch faces, multi-menu styles, and 24/7 fitness biometric tracking.",
+        features: [
+          "1.39\" (3.53 cm) High Definition Crystal Clear Display",
+          "Multiple Animated Watch Faces & Interactive Menu Styles",
+          "Continuous Heart Rate, SpO2 & Activity Step Counter",
+          "Extended Multi-Day Battery Life with Magnetic Fast Charging"
+        ],
+        variants: ["Pitch Black", "Gunmetal Grey", "Navy Strap"]
+      },
+      {
+        id: 15,
+        name: "Cross Wireless Mavic 2 Selfie Stick Tripod",
+        category: "gadgets",
+        catLabel: "Drones & Smart Gadgets",
+        badge: "Tripod Remote",
+        badgeColor: "bg-slate-900 text-white",
+        rating: 4.8,
+        reviews: 125,
+        price: 1199,
+        originalPrice: 1999,
+        image: "product/cross-wireless-selfie-stick-tripod.webp",
+        description: "Premium 360° rotation extendable selfie stick with magnetic quick clamp, detachable Bluetooth remote control, and fold-out reinforced tripod base.",
+        features: [
+          "360-Degree Fluid Rotation for Horizontal & Vertical Framing",
+          "Detachable Wireless Bluetooth Remote Control (10m Range)",
+          "Heavy-Duty Integrated Foldable Tripod Base with Silicone Feet",
+          "Telescopic Reinforced Stainless Steel Extension Rod"
+        ],
+        variants: ["Matte Black", "Pure White"]
+      },
+      {
+        id: 16,
+        name: "Marshall Major IV Wireless Headphones",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "80+ Hrs Play",
+        badgeColor: "bg-amber-600 text-white",
+        rating: 4.9,
+        reviews: 285,
+        price: 4999,
+        originalPrice: 8999,
+        image: "product/marshall-major-iv-headphones.webp",
+        description: "Legendary Marshall Major IV on-ear wireless headphones with signature custom-tuned dynamic drivers, 80+ hours of Bluetooth playtime, and wireless charging.",
+        features: [
+          "Legendary Marshall Custom-Tuned Deep Dynamic Acoustic Drivers",
+          "Over 80+ Massive Hours of Wireless Continuous Playtime",
+          "Wireless Qi-Charging & Multi-Directional Brass Control Knob",
+          "Rugged Foldable Architecture with Ergonomic Cushioned Headband"
+        ],
+        variants: ["Classic Marshall Black", "Vintage Brown"]
+      },
+      {
+        id: 1,
+        name: "Royal Kundan Bridal Gold Jewellery Set",
+        category: "fashion",
+        catLabel: "Fashion & Luxury",
+        badge: "Pure Kundan",
+        badgeColor: "bg-amber-600 text-white",
+        rating: 4.9,
+        reviews: 210,
+        price: 3999,
+        originalPrice: 7999,
+        image: "product/royal-kundan-bridal-jewellery.webp",
+        description: "Handcrafted traditional Indian 22K gold-plated Kundan bridal necklace and matching chandelier earrings set with fine teardrop pearls and floral filigree.",
+        features: [
+          "Authentic Handcrafted Kundan & Mirror Polished Stones",
+          "22K Micron Gold High-Luster Protective Coating",
+          "Adjustable Silk Dori Thread for Customized Neck Fit",
+          "Includes Matching Heavy Jhumka Chandelier Earrings"
+        ],
+        variants: ["Royal Gold", "Antique Matte Gold", "Rose Gold Accent"]
+      }
+    ];
+
+    // Render 4-Column PC Grid with A4 Proportions and Curved Borders
+    function renderProductGrid(items = productsData) {
+      const grid = document.getElementById("productGrid");
+      const countLabel = document.getElementById("catalogCountLabel");
+      
+      if (!items || items.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-2 md:col-span-3 lg:col-span-4 bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-12 text-center space-y-3 shadow-sm">
+            <div class="w-16 h-16 rounded-2xl bg-amber-50 border border-amber-200 text-amber-600 flex items-center justify-center mx-auto text-2xl shadow-inner">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <h4 class="text-base sm:text-lg font-black text-slate-900">No matching templates found</h4>
+            <p class="text-xs sm:text-sm text-slate-500 max-w-md mx-auto">We couldn't find any products matching your search query or selected category. Try searching for "camera", "drone", "audio", or reset filters.</p>
+            <div class="pt-2">
+              <button type="button" onclick="resetAllFilters()" class="cta-gold-btn py-2.5 px-5 rounded-xl text-slate-950 font-black text-xs uppercase tracking-tight inline-flex items-center space-x-1.5 shadow-md cursor-pointer">
+                <i class="fa-solid fa-rotate-left text-xs"></i>
+                <span>Reset All Filters</span>
+              </button>
+            </div>
+          </div>
+        `;
+        if (countLabel) countLabel.innerText = `0 items found`;
+        return;
+      }
+
+      grid.innerHTML = items.map(p => `
+        <div class="product-card bg-white border border-slate-200/90 hover:border-amber-500/80 rounded-3xl p-3 sm:p-4 text-left space-y-2.5 shadow-sm hover:shadow-xl flex flex-col justify-between transition-all duration-300 group cursor-pointer" data-category="${p.category}" onclick="window.location.href='buy.html?id=${p.id}'">
+          <div class="space-y-2.5">
+            <!-- Square Product Image Container with Curved Borders -->
+            <div class="relative w-full aspect-square rounded-2xl overflow-hidden bg-slate-50 border border-slate-200/80 p-2 flex items-center justify-center shadow-inner group-hover:border-amber-400/80 transition-colors">
+              <img src="${p.image}" alt="${p.name}" class="w-full h-full object-contain rounded-xl drop-shadow-md group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            
+            <!-- Category & Title -->
+            <div>
+              <span class="text-[9px] sm:text-[10px] uppercase font-extrabold text-amber-600 tracking-wider block">${p.catLabel}</span>
+              <h4 class="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight line-clamp-2 leading-snug group-hover:text-amber-600 transition-colors" title="${p.name}">${p.name}</h4>
+            </div>
+            
+            <!-- Star Ratings -->
+            <div class="flex items-center space-x-1 text-amber-500 text-[9px] sm:text-[10px]">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <span class="text-slate-500 font-mono font-bold">(${p.reviews})</span>
+            </div>
+          </div>
+
+          <!-- Price & Action Buttons (Add to Cart & Buy Now) -->
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <div class="flex items-baseline justify-between">
+              <div>
+                <span class="text-sm sm:text-base lg:text-lg font-black text-amber-600 font-mono">₹${p.price.toLocaleString('en-IN')}</span>
+                <span class="text-[10px] sm:text-xs text-slate-400 line-through ml-1 font-mono">₹${p.originalPrice.toLocaleString('en-IN')}</span>
+              </div>
+              <span class="text-[9px] font-bold text-emerald-600 bg-emerald-50 px-1.5 py-0.5 rounded-md border border-emerald-200">
+                Save ₹${(p.originalPrice - p.price).toLocaleString('en-IN')}
+              </span>
+            </div>
+
+            <!-- 2 Buttons: ADD TO CART and BUY NOW -->
+            <div class="grid grid-cols-2 gap-1.5 pt-0.5">
+              <button type="button" onclick="event.stopPropagation(); addToCart('${p.name}', ${p.price}, '${p.image}')" class="w-full bg-white hover:bg-slate-50 border border-amber-500/80 hover:border-amber-600 text-amber-700 font-black py-2 px-1 rounded-xl text-[9px] sm:text-xs uppercase tracking-tight flex items-center justify-center space-x-1 shadow-xs transition-colors">
+                <i class="fa-solid fa-cart-plus text-[9px]"></i>
+                <span>Add To Cart</span>
+              </button>
+
+              <a href="buy.html?id=${p.id}" target="_self" onclick="event.stopPropagation();" class="w-full cta-gold-btn shimmer py-2 px-1 rounded-xl text-slate-950 font-black text-[9px] sm:text-xs uppercase tracking-tight flex items-center justify-center space-x-1 shadow-md text-center">
+                <span>Buy Now</span>
+                <i class="fa-solid fa-arrow-right text-[8px]"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      `).join("");
+      if (countLabel) countLabel.innerText = `Showing ${items.length} ${items.length === 1 ? 'item' : 'items'}`;
+    }
+
+    // Helper: Check if any modal is currently visible
+    function isAnyModalOpen() {
+      const pm = document.getElementById("productModal");
+      const cm = document.getElementById("cartModal");
+      const bm = document.getElementById("bookingModal");
+      return (pm && !pm.classList.contains("hidden")) ||
+             (cm && !cm.classList.contains("hidden")) ||
+             (bm && !bm.classList.contains("hidden"));
+    }
+
+    // Single Product Modal State
+    let currentModalProduct = null;
+    let currentModalQty = 1;
+    let currentModalVariant = "";
+
+    function openProductModal(productId) {
+      const prod = productsData.find(p => p.id === productId);
+      if (!prod) return;
+
+      currentModalProduct = prod;
+      currentModalQty = 1;
+      currentModalVariant = prod.variants[0] || "";
+
+      document.getElementById("modalCatTag").innerText = prod.catLabel;
+      document.getElementById("modalProductImg").src = prod.image;
+      document.getElementById("modalProductImg").alt = prod.name;
+      document.getElementById("modalDiscountBadge").innerText = prod.badge;
+      document.getElementById("modalProductTitle").innerText = prod.name;
+      document.getElementById("modalRatingScore").innerText = prod.rating;
+      document.getElementById("modalReviewCount").innerText = `${prod.reviews} Verified Customer Reviews`;
+      
+      document.getElementById("modalProductPrice").innerText = `₹${prod.price.toLocaleString('en-IN')}`;
+      document.getElementById("modalOriginalPrice").innerText = `₹${prod.originalPrice.toLocaleString('en-IN')}`;
+      const savings = prod.originalPrice - prod.price;
+      document.getElementById("modalSavingsText").innerText = `Save ₹${savings.toLocaleString('en-IN')} (Direct Manufacturer Discount)`;
+      
+      document.getElementById("modalProductDesc").innerText = prod.description;
+      document.getElementById("modalQtyDisplay").innerText = currentModalQty;
+
+      // Populate features
+      const featureListEl = document.getElementById("modalFeatureList");
+      featureListEl.innerHTML = prod.features.map(f => `
+        <li class="flex items-center space-x-2">
+          <i class="fa-solid fa-circle-check text-amber-500 text-[10px] flex-shrink-0"></i>
+          <span>${f}</span>
+        </li>
+      `).join("");
+
+      // Populate variants
+      const variantContainer = document.getElementById("modalVariantContainer");
+      variantContainer.innerHTML = prod.variants.map((v, i) => `
+        <button type="button" onclick="selectModalVariant('${v}')" class="variant-chip px-3 py-1 rounded-xl text-xs font-bold transition-all ${i === 0 ? 'bg-amber-500 text-white border border-amber-600 shadow-sm' : 'bg-slate-100 text-slate-700 border border-slate-200 hover:border-slate-300'}">
+          ${v}
+        </button>
+      `).join("");
+
+      // Hide sticky bottom cart bar while modal is open
+      const stickyBar = document.getElementById("stickyCartBar");
+      stickyBar.classList.add("translate-y-24", "opacity-0", "pointer-events-none");
+
+      document.getElementById("productModal").classList.remove("hidden");
+    }
+
+    function closeProductModal() {
+      document.getElementById("productModal").classList.add("hidden");
+      updateCartUI();
+    }
+
+    function selectModalVariant(variantName) {
+      currentModalVariant = variantName;
+      const chips = document.querySelectorAll(".variant-chip");
+      chips.forEach(chip => {
+        if (chip.innerText.trim() === variantName) {
+          chip.className = "variant-chip px-3 py-1 rounded-xl text-xs font-bold transition-all bg-amber-500 text-white border border-amber-600 shadow-sm";
+        } else {
+          chip.className = "variant-chip px-3 py-1 rounded-xl text-xs font-bold transition-all bg-slate-100 text-slate-700 border border-slate-200 hover:border-slate-300";
+        }
+      });
+    }
+
+    function changeModalQty(delta) {
+      currentModalQty = Math.max(1, currentModalQty + delta);
+      document.getElementById("modalQtyDisplay").innerText = currentModalQty;
+    }
+
+    function addCurrentModalToCart() {
+      if (!currentModalProduct) return;
+      addToCart(currentModalProduct.name, currentModalProduct.price, currentModalProduct.image, currentModalVariant, currentModalQty);
+      closeProductModal();
+    }
+
+    // Opens the dedicated Buy Now page in the same window
+    function openModalBuyNowPage() {
+      if (!currentModalProduct) return;
+      const url = `buy.html?id=${currentModalProduct.id}&variant=${encodeURIComponent(currentModalVariant)}&qty=${currentModalQty}`;
+      window.location.href = url;
+    }
+
+    // Discuss / Order on WhatsApp
+    function buyCurrentModalNowWhatsApp() {
+      if (!currentModalProduct) return;
+      const total = currentModalProduct.price * currentModalQty;
+      const msg = encodeURIComponent(`Hello Digital Theme Store,\n\nI would like to discuss and order:\n• Product: ${currentModalProduct.name}\n• Edition/Color: ${currentModalVariant}\n• Quantity: ${currentModalQty}\n• Total Amount: ₹${total.toLocaleString('en-IN')}\n\nPlease confirm availability and dispatch details!`);
+      window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${msg}`, '_blank');
+      closeProductModal();
+    }
+
+    // Shopping Cart State
+    let cart = [];
+
+    function addToCart(name, price, img, variant = "", qty = 1) {
+      const itemKey = `${name}_${variant}`;
+      const existing = cart.find(item => item.key === itemKey);
+      if (existing) {
+        existing.qty += qty;
+      } else {
+        cart.push({ key: itemKey, name, price, img, variant, qty });
+      }
+      updateCartUI();
+      showToastNotification(name);
+    }
+
+    function updateCartUI() {
+      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      document.getElementById("cartCountBadge").innerText = totalCount;
+      document.getElementById("cartHeaderCount").innerText = `(${totalCount} item${totalCount === 1 ? '' : 's'})`;
+      document.getElementById("stickyCartCount").innerText = `(${totalCount} item${totalCount === 1 ? '' : 's'})`;
+      document.getElementById("stickyCartTotal").innerText = `₹${totalPrice.toLocaleString('en-IN')}`;
+      document.getElementById("cartSubtotalPrice").innerText = `₹${totalPrice.toLocaleString('en-IN')}`;
+      document.getElementById("cartTotalPrice").innerText = `₹${totalPrice.toLocaleString('en-IN')}`;
+
+      const stickyBar = document.getElementById("stickyCartBar");
+      if (totalCount > 0 && !isAnyModalOpen()) {
+        stickyBar.classList.remove("translate-y-24", "opacity-0", "pointer-events-none");
+      } else {
+        stickyBar.classList.add("translate-y-24", "opacity-0", "pointer-events-none");
+      }
+
+      const listContainer = document.getElementById("cartItemsList");
+      if (cart.length === 0) {
+        listContainer.innerHTML = `
+          <div class="text-center py-8 space-y-2 text-slate-400">
+            <i class="fa-solid fa-cart-arrow-down text-3xl text-slate-300"></i>
+            <p class="text-xs text-slate-500 font-bold">Your cart is currently empty.</p>
+            <button onclick="closeCartModal()" class="text-amber-600 text-xs underline font-bold">Browse Catalog</button>
+          </div>
+        `;
+        return;
+      }
+
+      listContainer.innerHTML = cart.map((item, idx) => `
+        <div class="flex items-center justify-between bg-slate-50 border border-slate-200 p-2.5 rounded-2xl">
+          <div class="flex items-center space-x-2.5 overflow-hidden">
+            <img src="${item.img}" alt="${item.name}" class="w-12 h-16 rounded-xl object-cover p-0.5 bg-white border border-slate-200 flex-shrink-0" />
+            <div class="overflow-hidden">
+              <h5 class="text-xs font-black text-slate-900 truncate">${item.name}</h5>
+              ${item.variant ? `<p class="text-[10px] text-slate-500 font-medium">${item.variant}</p>` : ''}
+              <p class="text-amber-600 font-black text-xs">₹${(item.price * item.qty).toLocaleString('en-IN')} <span class="text-[10px] text-slate-400 font-normal">(@ ₹${item.price.toLocaleString('en-IN')})</span></p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2 flex-shrink-0">
+            <div class="flex items-center space-x-1.5 bg-white border border-slate-200 rounded-lg p-0.5 shadow-xs">
+              <button onclick="updateQty(${idx}, -1)" class="w-5 h-5 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-xs">-</button>
+              <span class="text-xs font-mono font-black text-slate-900 px-1">${item.qty}</span>
+              <button onclick="updateQty(${idx}, 1)" class="w-5 h-5 rounded bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold flex items-center justify-center text-xs">+</button>
+            </div>
+            <button onclick="removeCartItem(${idx})" class="text-slate-400 hover:text-red-600 p-1 text-xs transition-colors">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function updateQty(index, change) {
+      cart[index].qty += change;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartUI();
+    }
+
+    function removeCartItem(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function openCartModal() {
+      const stickyBar = document.getElementById("stickyCartBar");
+      stickyBar.classList.add("translate-y-24", "opacity-0", "pointer-events-none");
+      document.getElementById("cartModal").classList.remove("hidden");
+    }
+
+    function closeCartModal() {
+      document.getElementById("cartModal").classList.add("hidden");
+      updateCartUI();
+    }
+
+    function checkoutViaWhatsApp() {
+      if (cart.length === 0) return;
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      let msg = "Hello Digital Theme Store, I would like to place an order:\n\n";
+      cart.forEach(item => {
+        msg += `• ${item.name} ${item.variant ? `(${item.variant})` : ''} x ${item.qty} = ₹${(item.price * item.qty).toLocaleString('en-IN')}\n`;
+      });
+      msg += `\nSubtotal: ₹${totalPrice.toLocaleString('en-IN')}\nExpress Delivery: FREE (₹0)\nTotal Amount: ₹${totalPrice.toLocaleString('en-IN')}\n\nPlease confirm my order and dispatch details.`;
+
+      const encoded = encodeURIComponent(msg);
+      window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encoded}`, '_blank');
+    }
+
+    // Category & Search Filtering System
+    let currentCategory = 'all';
+    let currentSearchQuery = '';
+
+    function filterCatalog(cat) {
+      currentCategory = cat;
+      const dropdown = document.getElementById("categorySelectDropdown");
+      if (dropdown) dropdown.value = cat;
+      updateCategoryButtonsUI(cat);
+      applyCatalogFilters();
+    }
+
+    function onCategorySelectChange(cat) {
+      currentCategory = cat;
+      updateCategoryButtonsUI(cat);
+      applyCatalogFilters();
+    }
+
+    function updateCategoryButtonsUI(cat) {
+      const activeClass = "cat-pill px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-black bg-gradient-to-r from-amber-500 to-amber-600 text-white border border-amber-500 shadow-md flex-shrink-0 transition-all";
+      const inactiveClass = "cat-pill px-2.5 sm:px-3 py-1.5 rounded-full text-[11px] sm:text-xs font-extrabold bg-white text-slate-700 border border-slate-200 hover:border-amber-400 hover:text-slate-900 flex-shrink-0 transition-all";
+
+      const btnMap = {
+        'all': document.getElementById('catBtnAll'),
+        'electronics': document.getElementById('catBtnElec'),
+        'security': document.getElementById('catBtnSec'),
+        'gadgets': document.getElementById('catBtnGad'),
+        'fashion': document.getElementById('catBtnFashion')
+      };
+
+      Object.keys(btnMap).forEach(key => {
+        const btn = btnMap[key];
+        if (btn) {
+          btn.className = (key === cat) ? activeClass : inactiveClass;
+        }
+      });
+    }
+
+    function applyCatalogFilters() {
+      const searchInput = document.getElementById("catalogSearchInput");
+      const clearBtn = document.getElementById("clearSearchBtn");
+      const query = (searchInput ? searchInput.value : "").trim().toLowerCase();
+      currentSearchQuery = query;
+
+      if (clearBtn) {
+        if (query.length > 0) {
+          clearBtn.classList.remove("hidden");
+        } else {
+          clearBtn.classList.add("hidden");
+        }
+      }
+
+      let filtered = productsData;
+
+      // Filter by category
+      if (currentCategory !== 'all') {
+        filtered = filtered.filter(p => p.category === currentCategory);
+      }
+
+      // Filter by search query across name, catLabel, description, features, price
+      if (query.length > 0) {
+        filtered = filtered.filter(p => {
+          const matchName = p.name.toLowerCase().includes(query);
+          const matchCat = (p.catLabel && p.catLabel.toLowerCase().includes(query)) || (p.category && p.category.toLowerCase().includes(query));
+          const matchDesc = p.description && p.description.toLowerCase().includes(query);
+          const matchFeatures = p.features && p.features.some(f => f.toLowerCase().includes(query));
+          const matchPrice = p.price && p.price.toString().includes(query);
+          return matchName || matchCat || matchDesc || matchFeatures || matchPrice;
+        });
+      }
+
+      renderProductGrid(filtered);
+    }
+
+    function clearSearchInput() {
+      const searchInput = document.getElementById("catalogSearchInput");
+      if (searchInput) searchInput.value = "";
+      applyCatalogFilters();
+      searchInput?.focus();
+    }
+
+    function resetAllFilters() {
+      const searchInput = document.getElementById("catalogSearchInput");
+      if (searchInput) searchInput.value = "";
+      filterCatalog('all');
+    }
+
+    // Booking Modal Flow
+    function openBookingModal() {
+      const stickyBar = document.getElementById("stickyCartBar");
+      stickyBar.classList.add("translate-y-24", "opacity-0", "pointer-events-none");
+      document.getElementById("bookingModal").classList.remove("hidden");
+    }
+
+    function closeBookingModal() {
+      document.getElementById("bookingModal").classList.add("hidden");
+      updateCartUI();
+    }
+
+    function handleStep1Submit(e) {
+      e.preventDefault();
+      const name = document.getElementById("inputFullName").value.trim();
+      const phone = document.getElementById("inputPhone").value.trim();
+      if (phone.length < 10) {
+        alert("Please enter a valid 10-digit WhatsApp phone number.");
+        return;
+      }
+      const msg = encodeURIComponent(`Hi Digital Theme Store, my name is ${name} (+91 ${phone}). I would like to schedule a 1-on-1 Strategy Consultation.`);
+      window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${msg}`, '_blank');
+      closeBookingModal();
+    }
+
+    // Toast Notification for Add to Cart
+    function showToastNotification(prodName) {
+      const toast = document.getElementById("socialProofToast");
+      document.getElementById("toastName").innerText = "Added to Cart";
+      document.getElementById("toastAction").innerText = prodName;
+      document.getElementById("toastLocation").innerText = "Success";
+      document.getElementById("toastTime").innerText = "Just now";
+      toast.classList.remove("hidden");
+      setTimeout(() => {
+        toast.classList.add("hidden");
+      }, 2500);
+    }
+
+    // Initialize Grid with all 16 A4 products (4 per row on PC)
+    renderProductGrid();
+  </script>
+</body>
+</html>

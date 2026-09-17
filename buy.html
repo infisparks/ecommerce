@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth h-full antialiased">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Complete Your Order | Digital Theme Store</title>
+  <meta name="description" content="Direct WhatsApp Order & Instant Concierge - Digital Theme Store" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+    body {
+      background-color: #FAF8F5;
+      color: #0f172a;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .gold-border-card {
+      border: 2px solid #f59e0b;
+      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.12);
+    }
+
+    .light-card {
+      border: 1px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+    }
+
+    /* High-Impact Gold Gradient CTA button */
+    .cta-gold-btn {
+      background: linear-gradient(180deg, #ffce54 0%, #f5a623 100%);
+      box-shadow: 0 4px 18px rgba(245, 166, 35, 0.35);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    }
+    .cta-gold-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(245, 166, 35, 0.45);
+    }
+    .cta-gold-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* WhatsApp Emerald CTA button */
+    .cta-whatsapp-btn {
+      background: linear-gradient(180deg, #25D366 0%, #128C7E 100%);
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.3);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .cta-whatsapp-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+    }
+    .cta-whatsapp-btn:active {
+      transform: scale(0.98);
+    }
+
+    /* Shimmer effect */
+    .shimmer {
+      position: relative;
+      overflow: hidden;
+    }
+    .shimmer::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        60deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.45) 50%,
+        transparent 70%
+      );
+      transform: rotate(30deg);
+      animation: shimmer-anim 3.5s infinite;
+    }
+    @keyframes shimmer-anim {
+      0% { transform: translate(-100%, -100%) rotate(30deg); }
+      100% { transform: translate(100%, 100%) rotate(30deg); }
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FAF8F5;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #EEDBC5;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #f59e0b;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: inline-flex;
+      white-space: nowrap;
+      animation: marquee 18s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+
+    .animate-toast-in {
+      animation: toastIn 0.3s ease-out forwards;
+    }
+    @keyframes toastIn {
+      from { opacity: 0; transform: translateY(12px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+  </style>
+</head>
+<body class="w-full min-h-full bg-[#FAF8F5] text-slate-900 font-sans selection:bg-amber-300 selection:text-slate-950">
+
+  <div class="w-full pb-32 flex flex-col items-center justify-start min-h-screen">
+
+    <!-- Top Urgency Ticker Bar -->
+    <div class="w-full bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-white text-[11px] sm:text-xs md:text-sm font-bold py-1.5 shadow-sm z-40 overflow-hidden relative flex items-center">
+      <div class="animate-marquee flex items-center space-x-6">
+        <span class="flex items-center space-x-1.5 flex-shrink-0">
+          <span class="inline-block w-2 h-2 rounded-full bg-white animate-ping"></span>
+          <span>⚡ INSTANT WHATSAPP DISPATCH &amp; COD AVAILABLE • DIRECT SUPPORT: +91 89288 84526</span>
+        </span>
+        <span class="flex items-center space-x-1.5 flex-shrink-0">
+          <span class="inline-block w-2 h-2 rounded-full bg-yellow-300"></span>
+          <span>🔥 Direct Factory Wholesale Pricing • 100% Genuine Certified</span>
+        </span>
+        <span class="flex items-center space-x-1.5 flex-shrink-0">
+          <span class="inline-block w-2 h-2 rounded-full bg-white animate-ping"></span>
+          <span>⚡ INSTANT WHATSAPP DISPATCH &amp; COD AVAILABLE • DIRECT SUPPORT: +91 89288 84526</span>
+        </span>
+        <span class="flex items-center space-x-1.5 flex-shrink-0">
+          <span class="inline-block w-2 h-2 rounded-full bg-yellow-300"></span>
+          <span>🔥 Direct Factory Wholesale Pricing • 100% Genuine Certified</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Header & Navigation Bar -->
+    <header class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 py-3 sticky top-0 bg-white/95 backdrop-blur-md z-30 border-b border-slate-200/90 shadow-sm">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <a href="index.html" class="flex items-center space-x-2.5 group">
+            <div class="w-9 h-9 sm:w-11 sm:h-11 rounded-full overflow-hidden border-2 border-amber-500 shadow-sm flex-shrink-0 group-hover:scale-105 transition-transform">
+              <img src="./image/profile.png" alt="Digital Theme Store" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <div class="flex items-center space-x-1.5">
+                <h1 class="text-sm sm:text-lg font-black text-slate-900 leading-tight">Digital Theme Store</h1>
+                <span class="bg-amber-500/15 text-amber-700 text-[10px] font-black px-2 py-0.2 rounded-full border border-amber-500/30 hidden sm:inline-block">OFFICIAL</span>
+              </div>
+              <p class="text-[10px] sm:text-xs text-amber-600 font-bold">Secure Order &amp; Direct Concierge</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="flex items-center space-x-2 sm:space-x-3">
+          <!-- Back to Catalog -->
+          <a href="index.html" class="bg-slate-100 hover:bg-slate-200 border border-slate-200 hover:border-amber-400 text-slate-700 hover:text-slate-950 font-bold text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-xl transition-all flex items-center space-x-1.5">
+            <i class="fa-solid fa-arrow-left text-xs"></i>
+            <span class="hidden sm:inline">Back to</span> Catalog
+          </a>
+
+          <!-- Direct WhatsApp Call/Chat Button with +91 89288 84526 -->
+          <a href="https://wa.me/918928884526?text=Hello%20Digital%20Theme,%20I%20have%20an%20inquiry%20regarding%20an%20order." target="_blank" class="cta-whatsapp-btn text-white font-extrabold text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-xl flex items-center space-x-1.5 shadow-md">
+            <i class="fa-brands fa-whatsapp text-sm sm:text-base"></i>
+            <span class="hidden md:inline">+91 89288 84526</span>
+            <span class="md:hidden">WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Checkout & Detail Container -->
+    <main class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 mt-4 sm:mt-6 space-y-6">
+
+      <!-- Breadcrumbs -->
+      <nav class="flex items-center space-x-2 text-xs text-slate-500 font-medium">
+        <a href="index.html" class="hover:text-amber-600 transition-colors">Catalog Home</a>
+        <i class="fa-solid fa-chevron-right text-[9px] text-slate-400"></i>
+        <span id="breadcrumbCategory" class="hover:text-amber-600 transition-colors">Action Cameras &amp; Audio</span>
+        <i class="fa-solid fa-chevron-right text-[9px] text-slate-400"></i>
+        <span id="breadcrumbTitle" class="text-slate-900 font-bold truncate max-w-[200px] sm:max-w-none">Q7 4K Pocket Digital Gimbal Camera</span>
+      </nav>
+
+      <!-- 2-Column Responsive Product Showcase & Order Layout -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+        
+        <!-- LEFT COLUMN: A4 Product Visual Showcase & In-Depth Specs (7 Cols on Desktop) -->
+        <div class="lg:col-span-7 space-y-5">
+
+          <!-- Main Square Image Showcase Card with Proper Curved Borders -->
+          <div class="bg-white border border-slate-200/90 rounded-3xl p-4 sm:p-6 shadow-sm relative overflow-hidden group">
+            <div class="relative w-full aspect-square max-h-[500px] rounded-2xl bg-slate-50 border border-slate-200/80 flex items-center justify-center p-3 overflow-hidden shadow-inner">
+              <img id="mainProductImg" src="product/q7-4k-pocket-gimbal-camera.webp" alt="Product Image" class="w-full h-full object-contain rounded-xl drop-shadow-md group-hover:scale-105 transition-transform duration-500" />
+
+              <div class="absolute bottom-3.5 left-3.5 bg-white/95 backdrop-blur-md border border-slate-200 px-3 py-1.5 rounded-xl text-xs font-bold text-slate-800 flex items-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-shield-check text-amber-600 text-sm"></i>
+                <span>100% Genuine Direct Import</span>
+              </div>
+
+              <div class="absolute bottom-3.5 right-3.5 bg-emerald-50 border border-emerald-300/80 px-2.5 py-1 rounded-xl text-[11px] font-extrabold text-emerald-700 flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                <span>In Stock</span>
+              </div>
+            </div>
+
+            <!-- Quick Template Selector Thumbnails (16 templates) with curved borders -->
+            <div class="mt-4 pt-3 border-t border-slate-100">
+              <div class="flex items-center justify-between mb-2">
+                <p class="text-xs font-extrabold text-slate-500 uppercase tracking-wider">All 16 Curated Templates:</p>
+                <span class="text-[11px] text-amber-700 font-bold font-mono">Tap to switch</span>
+              </div>
+              <div id="quickThumbsList" class="flex items-center gap-2.5 overflow-x-auto no-scrollbar pb-1">
+                <!-- Thumbnails populated via JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Description & Highlights Card -->
+          <div class="bg-white border border-slate-200/90 rounded-3xl p-5 sm:p-6 shadow-sm space-y-4 text-left">
+            <div>
+              <span id="productCategoryBadge" class="bg-amber-500/10 border border-amber-500/30 text-amber-700 text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">Action Cameras &amp; Audio</span>
+              <h2 id="productTitle" class="text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 mt-2 leading-tight">Q7 4K Pocket Digital Gimbal Camera</h2>
+              
+              <div class="flex items-center space-x-2 mt-2 text-xs sm:text-sm">
+                <div class="flex items-center text-amber-500 space-x-0.5">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <span id="productRatingScore" class="font-black text-slate-900">4.8</span>
+                <span class="text-slate-300">•</span>
+                <span id="productReviewCount" class="text-amber-700 font-bold">184 Verified Customer Reviews</span>
+              </div>
+            </div>
+
+            <div class="border-t border-slate-100 pt-3">
+              <h3 class="text-xs font-black text-slate-800 uppercase tracking-wider mb-1.5">Product Overview</h3>
+              <p id="productDescription" class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                180° rotatable 4K pocket digital vlog camera with high-response touch screen, high frame rate recording, lightweight portable build for travel and streaming.
+              </p>
+            </div>
+
+            <!-- Highlights Checklist -->
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 space-y-2.5">
+              <h4 class="text-xs font-black text-amber-700 uppercase tracking-wider flex items-center gap-2">
+                <i class="fa-solid fa-bolt text-amber-600"></i> Key Features &amp; Specifications
+              </h4>
+              <ul id="productFeatureList" class="space-y-2 text-xs sm:text-sm text-slate-700">
+                <!-- Features populated via JS -->
+              </ul>
+            </div>
+
+            <!-- Trust & Assurance Badges (3-item) -->
+            <div class="grid grid-cols-3 gap-2.5 pt-1 text-center">
+              <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-3">
+                <i class="fa-solid fa-rotate-left text-amber-600 text-lg mb-1 block"></i>
+                <span class="text-xs font-extrabold text-slate-800 block">7 Days Return</span>
+                <span class="text-[10px] text-slate-500">Hassle-Free Replacement</span>
+              </div>
+              <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-3">
+                <i class="fa-solid fa-award text-amber-600 text-lg mb-1 block"></i>
+                <span class="text-xs font-extrabold text-slate-800 block">1 Year Warranty</span>
+                <span class="text-[10px] text-slate-500">Direct Brand Protection</span>
+              </div>
+              <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-3">
+                <i class="fa-solid fa-truck-ramp-box text-emerald-600 text-lg mb-1 block"></i>
+                <span class="text-xs font-extrabold text-slate-800 block">COD Available</span>
+                <span class="text-[10px] text-slate-500">Pay on Safe Delivery</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN: Fast Order Form & WhatsApp Concierge (5 Cols on Desktop) -->
+        <div class="lg:col-span-5 space-y-5">
+          
+          <!-- Sticky Order Box Container -->
+          <div class="bg-white border-2 border-amber-400/90 rounded-3xl p-5 sm:p-6 shadow-[0_12px_35px_rgba(245,158,11,0.14)] space-y-4 text-left">
+            
+            <!-- Price Summary Header -->
+            <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 flex items-center justify-between">
+              <div>
+                <div class="flex items-baseline space-x-2">
+                  <span id="productPriceDisplay" class="text-2xl sm:text-3xl font-black text-amber-600 font-mono">₹4,499</span>
+                  <span id="productOriginalPriceDisplay" class="text-sm sm:text-base text-slate-400 line-through font-semibold font-mono">₹6,999</span>
+                </div>
+                <p id="savingsBannerText" class="text-[11px] text-emerald-600 font-bold mt-1 flex items-center gap-1">
+                  <i class="fa-solid fa-tag"></i> <span>Direct Factory Price • Save ₹2,500</span>
+                </p>
+              </div>
+              <div class="text-right text-[11px] text-slate-500">
+                <span class="inline-block bg-emerald-100 text-emerald-800 font-extrabold px-2 py-0.5 rounded-md text-[10px] mb-0.5">FREE SHIPPING</span>
+                <p class="font-medium">Taxes Included</p>
+              </div>
+            </div>
+
+            <!-- Edition / Color Variant Selector -->
+            <div class="space-y-2">
+              <label class="block text-xs font-black text-slate-800 uppercase tracking-wide">
+                1. Select Edition / Color:
+              </label>
+              <div id="variantChipsContainer" class="flex items-center flex-wrap gap-2">
+                <!-- Variant chips populated via JS -->
+              </div>
+            </div>
+
+            <!-- Quantity Selector -->
+            <div class="flex items-center justify-between bg-slate-50 border border-slate-200 p-3 rounded-2xl">
+              <div>
+                <span class="text-xs font-black text-slate-800 block">2. Select Quantity</span>
+                <span class="text-[10px] text-slate-500">Subtotal updates automatically</span>
+              </div>
+              <div class="flex items-center space-x-3 bg-white border border-slate-200 rounded-xl p-1 shadow-xs">
+                <button type="button" onclick="changeOrderQty(-1)" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-black flex items-center justify-center text-sm transition-colors">-</button>
+                <span id="orderQtyDisplay" class="text-base font-mono font-black text-slate-900 w-7 text-center">1</span>
+                <button type="button" onclick="changeOrderQty(1)" class="w-8 h-8 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-black flex items-center justify-center text-sm transition-colors">+</button>
+              </div>
+            </div>
+
+            <!-- Customer Shipping Information Form -->
+            <form id="directCheckoutForm" onsubmit="handleDirectOrderSubmit(event)" class="space-y-3 pt-2 border-t border-slate-100">
+              <div class="flex items-center justify-between">
+                <label class="block text-xs font-black text-slate-800 uppercase tracking-wide">
+                  3. Delivery &amp; Contact Details:
+                </label>
+                <span class="text-[10px] text-slate-400 font-medium">* Required for Dispatch</span>
+              </div>
+
+              <div>
+                <input type="text" id="custName" required placeholder="Your Full Name *" class="w-full bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none transition-all" />
+              </div>
+
+              <div>
+                <div class="flex items-center bg-slate-50 border border-slate-200 focus-within:border-amber-500 focus-within:bg-white rounded-xl overflow-hidden transition-all">
+                  <div class="px-3 py-2.5 bg-slate-100 border-r border-slate-200 text-xs font-bold text-slate-700">🇮🇳 +91</div>
+                  <input type="tel" id="custPhone" inputmode="numeric" pattern="[0-9]*" maxlength="10" required placeholder="WhatsApp Number (10 digits) *" class="w-full px-3 py-2.5 text-xs sm:text-sm text-slate-900 bg-transparent placeholder-slate-400 focus:outline-none font-mono" />
+                </div>
+              </div>
+
+              <div>
+                <textarea id="custAddress" rows="2" required placeholder="Full Delivery Address (Flat/House No, Building, Street, Area) *" class="w-full bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none resize-none transition-all"></textarea>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2">
+                <input type="text" id="custCity" required placeholder="City / District *" class="w-full bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl px-3 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none" />
+                <input type="text" id="custPincode" maxlength="6" pattern="[0-9]{6}" required placeholder="Pincode (6 digits) *" class="w-full bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl px-3 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none font-mono" />
+              </div>
+
+              <!-- Payment Method Selection -->
+              <div class="space-y-1.5 pt-1">
+                <label class="block text-xs font-black text-slate-800 uppercase tracking-wide">4. Payment Mode:</label>
+                <div class="grid grid-cols-2 gap-2">
+                  <label class="flex items-center space-x-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 p-2.5 rounded-xl cursor-pointer">
+                    <input type="radio" name="payMethod" value="Cash on Delivery (COD)" checked class="accent-amber-600" />
+                    <span class="text-xs font-bold text-slate-800">Cash on Delivery</span>
+                  </label>
+                  <label class="flex items-center space-x-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 p-2.5 rounded-xl cursor-pointer">
+                    <input type="radio" name="payMethod" value="UPI / Instant Online" class="accent-amber-600" />
+                    <span class="text-xs font-bold text-slate-800">UPI / QR Pay</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Live Order Total Summary -->
+              <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-1 text-xs">
+                <div class="flex justify-between text-slate-600">
+                  <span>Unit Price:</span>
+                  <span id="sumUnitPrice" class="font-mono font-bold text-slate-800">₹4,499</span>
+                </div>
+                <div class="flex justify-between text-slate-600">
+                  <span>Quantity:</span>
+                  <span id="sumQuantity" class="font-mono font-bold text-slate-800">1</span>
+                </div>
+                <div class="flex justify-between text-emerald-600 font-bold">
+                  <span>Express Shipping:</span>
+                  <span>FREE (₹0)</span>
+                </div>
+                <div class="flex justify-between items-baseline pt-1.5 border-t border-slate-200 text-sm font-black text-slate-900">
+                  <span>Total Payable:</span>
+                  <span id="sumTotalPrice" class="text-amber-600 text-lg font-mono">₹4,499</span>
+                </div>
+              </div>
+
+              <!-- TWO KEY PRIMARY ACTION BUTTONS -->
+              <div class="space-y-2.5 pt-2">
+                <!-- 1. Instant WhatsApp Buy Now Button -->
+                <button type="submit" class="w-full cta-gold-btn shimmer py-3.5 px-4 rounded-2xl text-slate-950 font-black text-xs sm:text-sm uppercase tracking-wide flex items-center justify-center space-x-2 shadow-xl cursor-pointer">
+                  <i class="fa-brands fa-whatsapp text-lg text-slate-950"></i>
+                  <span>CONFIRM ORDER ON WHATSAPP</span>
+                </button>
+
+                <!-- 2. Discuss on WhatsApp with +91 89288 84526 -->
+                <button type="button" onclick="discussOnWhatsApp()" class="w-full cta-whatsapp-btn py-3 px-4 rounded-2xl text-white font-extrabold text-xs sm:text-sm flex items-center justify-center space-x-2 shadow-lg cursor-pointer">
+                  <i class="fa-brands fa-whatsapp text-base"></i>
+                  <span>DISCUSS ON WHATSAPP (+91 89288 84526)</span>
+                </button>
+              </div>
+
+              <div class="flex items-center justify-center space-x-3 text-[10px] text-slate-500 font-medium pt-1">
+                <span class="flex items-center gap-1"><i class="fa-solid fa-lock text-emerald-600"></i> Encrypted WhatsApp</span>
+                <span>•</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-headset text-amber-600"></i> Instant Concierge Support</span>
+              </div>
+            </form>
+
+          </div>
+
+          <!-- Direct Concierge Contact Card -->
+          <div class="bg-white border border-slate-200 rounded-2xl p-4 text-left shadow-xs flex items-center justify-between gap-3">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-600 flex items-center justify-center text-lg flex-shrink-0">
+                <i class="fa-solid fa-phone-volume"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-black text-slate-900">Need Bulk Quantity or Custom Quote?</h4>
+                <p class="text-[11px] text-slate-500">Chat directly with our B2B manager on WhatsApp</p>
+              </div>
+            </div>
+            <a href="https://wa.me/918928884526?text=Hi%20Digital%20Theme,%20I%20am%20interested%20in%20bulk%20inquiry%20or%20custom%20order." target="_blank" class="bg-slate-100 hover:bg-slate-200 text-slate-900 font-black text-xs px-3 py-2 rounded-xl flex-shrink-0 border border-slate-200 transition-colors">
+              Chat Now
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- 4-TEMPLATE PC ROW: Other Recommended Templates / Products -->
+      <section class="mt-12 pt-8 border-t border-slate-200 space-y-4 text-left">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="text-base sm:text-xl font-black text-slate-900 tracking-tight">Explore More Curated Templates &amp; Products</h3>
+            <p class="text-xs text-slate-500 font-medium">Browse verified best-sellers across all categories</p>
+          </div>
+          <a href="index.html" class="text-xs font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1">
+            View All <i class="fa-solid fa-arrow-right text-[10px]"></i>
+          </a>
+        </div>
+
+        <!-- 4-Column Grid on PC (4 templates per row) -->
+        <div id="relatedProductsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-5">
+          <!-- Populated via JS -->
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="text-center text-slate-500 text-xs sm:text-sm py-8 space-y-2 border-t border-slate-200">
+        <p class="font-bold text-slate-700">Digital Theme • E-Commerce &amp; Revenue Systems</p>
+        <p>© <span id="yearSpan">2026</span> Digital Theme. All Rights Reserved.</p>
+        <p class="text-xs text-slate-500 flex items-center justify-center gap-2">
+          <span>Official WhatsApp Support:</span>
+          <a href="https://wa.me/918928884526" target="_blank" class="font-bold text-emerald-600 hover:underline">+91 89288 84526</a>
+        </p>
+      </footer>
+
+    </main>
+
+    <!-- Mobile Floating Bottom Action Bar -->
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 p-2.5 shadow-2xl flex items-center justify-between gap-2">
+      <div class="flex items-center space-x-2 pl-1 min-w-0">
+        <img id="mobileBarImg" src="product/q7-4k-pocket-gimbal-camera.webp" alt="Product" class="w-11 h-11 rounded-xl object-contain bg-slate-50 border border-slate-200 p-1 flex-shrink-0" />
+        <div class="overflow-hidden">
+          <span id="mobileBarPrice" class="text-sm font-black text-amber-600 font-mono block leading-tight">₹4,499</span>
+          <span class="text-[10px] text-emerald-600 font-bold block truncate">Free Express Delivery</span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-1.5 flex-shrink-0">
+        <button onclick="discussOnWhatsApp()" class="cta-whatsapp-btn text-white p-2.5 rounded-xl text-xs flex items-center justify-center shadow-sm">
+          <i class="fa-brands fa-whatsapp text-base"></i>
+        </button>
+        <button onclick="document.getElementById('directCheckoutForm').scrollIntoView({ behavior: 'smooth' })" class="cta-gold-btn shimmer py-2.5 px-3.5 rounded-xl text-slate-950 font-black text-xs uppercase tracking-tight shadow-md flex items-center space-x-1">
+          <span>Order Now</span>
+          <i class="fa-solid fa-arrow-down text-[10px]"></i>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById("yearSpan").innerText = new Date().getFullYear();
+
+    // 16 Master A4 Products Database
+    const allProducts = [
+      {
+        id: 2,
+        name: "Q7 4K Pocket Digital Gimbal Camera",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "4K Ultra HD",
+        rating: 4.8,
+        reviews: 184,
+        price: 4499,
+        originalPrice: 6999,
+        image: "product/q7-4k-pocket-gimbal-camera.webp",
+        description: "180° rotatable 4K pocket digital vlog camera with high-response touch screen, high frame rate recording, lightweight portable build for travel and streaming.",
+        features: [
+          "180° Smooth Mechanical Rotatable Camera Lens",
+          "4K Ultra HD High Frame Rate Crystal Video",
+          "Intuitive Touch Screen Interface & Real-time Live View",
+          "Long-Lasting High Capacity Rechargeable Battery"
+        ],
+        variants: ["Midnight Matte Black", "Obsidian Grey"]
+      },
+      {
+        id: 3,
+        name: "M3 360° Action Camera & Mount Kit",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "360° Panoramic",
+        rating: 4.9,
+        reviews: 142,
+        price: 5999,
+        originalPrice: 8999,
+        image: "product/m3-360-action-camera-kit.webp",
+        description: "360° dual-lens panoramic 4K action camera with Wi-Fi live preview, waterproof casing, handlebar bike mounts, and external clip-on microphone kit.",
+        features: [
+          "360° Wide Angle Panoramic Dual Lens Sensor",
+          "4K Ultra HD Action Capture with Wi-Fi Connectivity",
+          "Complete Outdoor Sports & Bike Handlebar Mount Kit",
+          "Water-Resistant Ruggedized Enclosure for Extreme Action"
+        ],
+        variants: ["Standard Pro Kit", "Adventure Mic Bundle"]
+      },
+      {
+        id: 4,
+        name: "M11W Magnetic 4K Action Camera",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "IPX7 Waterproof",
+        rating: 4.7,
+        reviews: 168,
+        price: 3299,
+        originalPrice: 4999,
+        image: "product/m11w-magnetic-4k-action-camera.webp",
+        description: "Ultra-compact magnetic wearable 4K action cam with 120° wide-angle lens, smooth 6-axis stabilization, and waterproof housing for water sports and rides.",
+        features: [
+          "Ultra-Lightweight Magnetic Quick-Snap Mount Support",
+          "IPX7 Waterproof Direct Submersion Architecture",
+          "120° Wide Angle Lens with Gyro Smooth Video",
+          "One-Click Fast Capture with Long Battery Life"
+        ],
+        variants: ["Stealth Black", "Active Orange Accent"]
+      },
+      {
+        id: 5,
+        name: "Smart R/C App-Controlled Drift Car",
+        category: "gadgets",
+        catLabel: "Drones & Smart Gadgets",
+        badge: "App Wi-Fi",
+        rating: 4.8,
+        reviews: 94,
+        price: 1999,
+        originalPrice: 3499,
+        image: "product/smart-rc-drift-car.webp",
+        description: "High-speed 360° radio control racing supercar with smartphone iOS/Android Wi-Fi app remote, dual drive motors, and rechargeable fast-charge battery.",
+        features: [
+          "Real-Time Wi-Fi App Control via iOS & Android Phone",
+          "360° Drift & High-Speed Multi-Directional Stunts",
+          "Shock-Absorbent Durable Aerodynamic Racing Body",
+          "USB Fast Rechargeable Lithium-Ion Battery Included"
+        ],
+        variants: ["British Racing Green", "Speed Red", "Metallic Black"]
+      },
+      {
+        id: 6,
+        name: "L16 Law Enforcement Body Camera",
+        category: "security",
+        catLabel: "Security & Body Cams",
+        badge: "Night Vision",
+        rating: 4.9,
+        reviews: 112,
+        price: 2899,
+        originalPrice: 4500,
+        image: "product/l16-law-enforcement-body-camera.webp",
+        description: "Professional 1080P body-worn surveillance camera with 170° wide-angle lens, infrared night vision, auto motion detection, and TF card support up to 256GB.",
+        features: [
+          "1080P Full HD Video with 170° Ultra-Wide Viewing Angle",
+          "Automatic Infrared Night Vision for Low-Light Recording",
+          "Smart Motion Detection & Loop Recording (Never Miss Moments)",
+          "Supports TF MicroSD Storage Up to 256GB"
+        ],
+        variants: ["Heavy-Duty Black", "Tactical Clip Edition"]
+      },
+      {
+        id: 7,
+        name: "5K Ultra HD Bike & Helmet Camera",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "5K 30FPS",
+        rating: 4.9,
+        reviews: 156,
+        price: 4799,
+        originalPrice: 7299,
+        image: "product/5k-ultra-hd-bike-helmet-camera.webp",
+        description: "Heavy-duty 5K motorcycle and bicycle sports camera with built-in LED headlight flashlight, loop recording, waterproof aluminum housing, and mounting gear.",
+        features: [
+          "5K 30FPS Ultra-Crisp High Resolution Recording",
+          "Integrated High-Lumen Tactical LED Night Flashlight",
+          "Wi-Fi Connectivity with Live Mobile Phone Sync",
+          "Complete Motorcycle Handlebar & Helmet Bracket Accessories"
+        ],
+        variants: ["Standard Rider Kit", "Pro Touring Bundle"]
+      },
+      {
+        id: 8,
+        name: "Dual Screen 4K Ultra HD Action Cam",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "Dual Screen",
+        rating: 4.8,
+        reviews: 205,
+        price: 3699,
+        originalPrice: 5499,
+        image: "product/dual-screen-4k-action-camera.webp",
+        description: "4K sports action camera featuring front selfie screen + 2.0\" rear IPS display, Wi-Fi connectivity, dashcam driving mode, and 30m waterproof casing.",
+        features: [
+          "Dual Color Screens: 2.0\" IPS Rear + Front Selfie Display",
+          "4K Ultra HD Sensor with Wide Angle Dynamic Lens",
+          "Multi-Scenario: Diving (30m), Cycling, Hiking & Dash Cam",
+          "Wireless Mobile Remote Control with Android & iOS App"
+        ],
+        variants: ["Matte Black", "Silver Edition"]
+      },
+      {
+        id: 9,
+        name: "CS12 Security HD Body Camera",
+        category: "security",
+        catLabel: "Security & Body Cams",
+        badge: "1080P FHD",
+        rating: 4.8,
+        reviews: 89,
+        price: 2499,
+        originalPrice: 3999,
+        image: "product/cs12-security-hd-body-camera.webp",
+        description: "Compact personal protection body camera with 140° wide view, dual high-lumen LED night assist lights, loop recording, and all-day endurance battery.",
+        features: [
+          "1080P Full HD Video Clarity with 140° Wide Lens",
+          "Dual LED Security Night Vision & Flashlight Array",
+          "Long Battery Life for All-Day Security Recording",
+          "Supports High Speed TF Card Expansion Up to 128GB"
+        ],
+        variants: ["Security Black", "Clip Pro Edition"]
+      },
+      {
+        id: 10,
+        name: "LK-035 Handheld Camera with Cooling Fan",
+        category: "gadgets",
+        catLabel: "Drones & Smart Gadgets",
+        badge: "Turbine Fan",
+        rating: 4.8,
+        reviews: 73,
+        price: 2799,
+        originalPrice: 4299,
+        image: "product/lk035-handheld-camera-cooling.webp",
+        description: "2-in-1 portable 1080P HD vlog camera equipped with an integrated turbine cooling fan with digital speed display and 180° rotating lens head.",
+        features: [
+          "Built-in Powerful Turbine Cooling Fan with Digital LED Meter",
+          "180° Rotating Gimbal Camera Head for Instant Selfies",
+          "1080P HD Clear Video with Ergonomic Grip",
+          "Ideal for Summer Travel, Outdoor Vlogging & Festivals"
+        ],
+        variants: ["Neon Pink Trim", "Electric Blue", "Obsidian Black"]
+      },
+      {
+        id: 11,
+        name: "FPV Clip-on Glasses Smart Camera Kit",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "FPV POV",
+        rating: 4.9,
+        reviews: 130,
+        price: 2999,
+        originalPrice: 4999,
+        image: "product/fpv-clip-glasses-smart-camera.webp",
+        description: "Hands-free first-person-view 1080P micro camera module designed to clip securely onto any sunglasses or prescription eyewear for POV cycling and sports.",
+        features: [
+          "True First Person View (FPV) True Eye-Level Recording",
+          "Universal Clip Mount Fits Directly onto Any Eyewear Frame",
+          "1080P HD Lens with Built-in Color Display Screen",
+          "Includes Hard Carrying Case, Eyewear Frame & Charging Cable"
+        ],
+        variants: ["Arctic White / Black", "Titanium Grey"]
+      },
+      {
+        id: 12,
+        name: "X20 6-Axis Gimbal Action Camera",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "6-Axis Gyro",
+        rating: 4.8,
+        reviews: 147,
+        price: 3899,
+        originalPrice: 5999,
+        image: "product/x20-6axis-gimbal-camera.webp",
+        description: "Compact pocket gimbal camera featuring hardware 6-axis gyro stabilization, wide-angle lens, live color monitor, and dedicated waterproof case.",
+        features: [
+          "Hardware 6-Axis Electronic Image Stabilization (EIS)",
+          "1080P Full HD with Wide Dynamic Range (WDR)",
+          "Pocket-Sized Ergonomic Handle with Preview Monitor",
+          "Waterproof Casing Included for Snorkeling and Surfing"
+        ],
+        variants: ["Gold Ring Edition", "Stealth Carbon"]
+      },
+      {
+        id: 13,
+        name: "T1 Mini FPV Aircraft Drone with Screen Remote",
+        category: "gadgets",
+        catLabel: "Drones & Smart Gadgets",
+        badge: "Screen Remote",
+        rating: 4.9,
+        reviews: 192,
+        price: 4299,
+        originalPrice: 6500,
+        image: "product/t1-mini-fpv-aircraft-drone.webp",
+        description: "Aerodynamic mini quadcopter drone with 1080P HD camera, 360° ducted propeller guards, stable altitude hold, and integrated video display remote controller.",
+        features: [
+          "Dedicated Screen Controller - No Phone Required to Fly!",
+          "360° Fully Enclosed Ducted Safety Propeller Guards",
+          "1080P HD Camera with Real-Time Video Transmission",
+          "One-Key Takeoff & Landing with Barometer Altitude Hold"
+        ],
+        variants: ["Alpine White", "Stealth Grey"]
+      },
+      {
+        id: 14,
+        name: "boAt Lunar Orbit 2 HD Smartwatch",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "Top Brand",
+        rating: 4.9,
+        reviews: 310,
+        price: 1799,
+        originalPrice: 3999,
+        image: "product/boat-lunar-orbit-2-smartwatch.webp",
+        description: "Official boAt Lunar Orbit 2 smartwatch with 1.39\" HD display, 2.5D curved animated watch faces, multi-menu styles, and 24/7 fitness biometric tracking.",
+        features: [
+          "1.39\" (3.53 cm) High Definition Crystal Clear Display",
+          "Multiple Animated Watch Faces & Interactive Menu Styles",
+          "Continuous Heart Rate, SpO2 & Activity Step Counter",
+          "Extended Multi-Day Battery Life with Magnetic Fast Charging"
+        ],
+        variants: ["Pitch Black", "Gunmetal Grey", "Navy Strap"]
+      },
+      {
+        id: 15,
+        name: "Cross Wireless Mavic 2 Selfie Stick Tripod",
+        category: "gadgets",
+        catLabel: "Drones & Smart Gadgets",
+        badge: "Tripod Remote",
+        rating: 4.8,
+        reviews: 125,
+        price: 1199,
+        originalPrice: 1999,
+        image: "product/cross-wireless-selfie-stick-tripod.webp",
+        description: "Premium 360° rotation extendable selfie stick with magnetic quick clamp, detachable Bluetooth remote control, and fold-out reinforced tripod base.",
+        features: [
+          "360-Degree Fluid Rotation for Horizontal & Vertical Framing",
+          "Detachable Wireless Bluetooth Remote Control (10m Range)",
+          "Heavy-Duty Integrated Foldable Tripod Base with Silicone Feet",
+          "Telescopic Reinforced Stainless Steel Extension Rod"
+        ],
+        variants: ["Matte Black", "Pure White"]
+      },
+      {
+        id: 16,
+        name: "Marshall Major IV Wireless Headphones",
+        category: "electronics",
+        catLabel: "Action Cameras & Audio",
+        badge: "80+ Hrs Play",
+        rating: 4.9,
+        reviews: 285,
+        price: 4999,
+        originalPrice: 8999,
+        image: "product/marshall-major-iv-headphones.webp",
+        description: "Legendary Marshall Major IV on-ear wireless headphones with signature custom-tuned dynamic drivers, 80+ hours of Bluetooth playtime, and wireless charging.",
+        features: [
+          "Legendary Marshall Custom-Tuned Deep Dynamic Acoustic Drivers",
+          "Over 80+ Massive Hours of Wireless Continuous Playtime",
+          "Wireless Qi-Charging & Multi-Directional Brass Control Knob",
+          "Rugged Foldable Architecture with Ergonomic Cushioned Headband"
+        ],
+        variants: ["Classic Marshall Black", "Vintage Brown"]
+      },
+      {
+        id: 1,
+        name: "Royal Kundan Bridal Gold Jewellery Set",
+        category: "fashion",
+        catLabel: "Fashion & Luxury",
+        badge: "Pure Kundan",
+        rating: 4.9,
+        reviews: 210,
+        price: 3999,
+        originalPrice: 7999,
+        image: "product/royal-kundan-bridal-jewellery.webp",
+        description: "Handcrafted traditional Indian 22K gold-plated Kundan bridal necklace and matching chandelier earrings set with fine teardrop pearls and floral filigree.",
+        features: [
+          "Authentic Handcrafted Kundan & Mirror Polished Stones",
+          "22K Micron Gold High-Luster Protective Coating",
+          "Adjustable Silk Dori Thread for Customized Neck Fit",
+          "Includes Matching Heavy Jhumka Chandelier Earrings"
+        ],
+        variants: ["Royal Gold", "Antique Matte Gold", "Rose Gold Accent"]
+      }
+    ];
+
+    const WHATSAPP_PHONE = "918928884526"; // User requested: +91 89288 84526
+
+    // Get current product from URL params (defaults to 2: Q7 4K Camera)
+    const urlParams = new URLSearchParams(window.location.search);
+    const productIdParam = parseInt(urlParams.get('id')) || 2;
+    let currentProduct = allProducts.find(p => p.id === productIdParam) || allProducts[1];
+    let selectedVariant = urlParams.get('variant') || currentProduct.variants[0];
+    let orderQuantity = parseInt(urlParams.get('qty')) || 1;
+
+    // Render Current Product
+    function renderProduct() {
+      document.title = `Buy ${currentProduct.name} | Digital Theme Store`;
+      document.getElementById("breadcrumbCategory").innerText = currentProduct.catLabel;
+      document.getElementById("breadcrumbTitle").innerText = currentProduct.name;
+      
+      document.getElementById("mainProductImg").src = currentProduct.image;
+      document.getElementById("mainProductImg").alt = currentProduct.name;
+      document.getElementById("productCategoryBadge").innerText = currentProduct.catLabel;
+      document.getElementById("productTitle").innerText = currentProduct.name;
+      document.getElementById("productRatingScore").innerText = currentProduct.rating;
+      document.getElementById("productReviewCount").innerText = `${currentProduct.reviews} Verified Customer Reviews`;
+      document.getElementById("productDescription").innerText = currentProduct.description;
+
+      document.getElementById("productPriceDisplay").innerText = `₹${currentProduct.price.toLocaleString('en-IN')}`;
+      document.getElementById("productOriginalPriceDisplay").innerText = `₹${currentProduct.originalPrice.toLocaleString('en-IN')}`;
+      
+      const savings = currentProduct.originalPrice - currentProduct.price;
+      document.getElementById("savingsBannerText").innerHTML = `<i class="fa-solid fa-tag"></i> <span>Direct Factory Price • Save ₹${savings.toLocaleString('en-IN')}</span>`;
+
+      // Mobile Bottom Bar
+      document.getElementById("mobileBarImg").src = currentProduct.image;
+      document.getElementById("mobileBarPrice").innerText = `₹${(currentProduct.price * orderQuantity).toLocaleString('en-IN')}`;
+
+      // Features List
+      const featEl = document.getElementById("productFeatureList");
+      featEl.innerHTML = currentProduct.features.map(f => `
+        <li class="flex items-center space-x-2">
+          <i class="fa-solid fa-circle-check text-amber-500 text-xs flex-shrink-0"></i>
+          <span>${f}</span>
+        </li>
+      `).join("");
+
+      // Variants
+      if (!currentProduct.variants.includes(selectedVariant)) {
+        selectedVariant = currentProduct.variants[0];
+      }
+      renderVariantChips();
+
+      // Quick Thumbnails (All 16 products)
+      renderQuickThumbnails();
+
+      // Calculation Summary
+      updateTotals();
+
+      // Related Products (PC 4 in a row)
+      renderRelatedProducts();
+    }
+
+    function renderVariantChips() {
+      const cont = document.getElementById("variantChipsContainer");
+      cont.innerHTML = currentProduct.variants.map(v => {
+        const isSelected = v === selectedVariant;
+        return `
+          <button type="button" onclick="selectVariant('${v}')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${isSelected ? 'bg-amber-500 text-white border border-amber-600 shadow-sm' : 'bg-slate-100 text-slate-700 border border-slate-200 hover:border-slate-300'}">
+            ${v}
+          </button>
+        `;
+      }).join("");
+    }
+
+    function selectVariant(v) {
+      selectedVariant = v;
+      renderVariantChips();
+    }
+
+    function renderQuickThumbnails() {
+      const list = document.getElementById("quickThumbsList");
+      list.innerHTML = allProducts.map(p => {
+        const isCur = p.id === currentProduct.id;
+        return `
+          <a href="buy.html?id=${p.id}" class="flex-shrink-0 w-14 h-14 rounded-xl p-1 bg-white border-2 ${isCur ? 'border-amber-500 shadow-md scale-105' : 'border-slate-200 hover:border-amber-300 opacity-70 hover:opacity-100'} transition-all flex items-center justify-center overflow-hidden" title="${p.name}">
+            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-contain rounded-lg" />
+          </a>
+        `;
+      }).join("");
+    }
+
+    function changeOrderQty(delta) {
+      orderQuantity = Math.max(1, orderQuantity + delta);
+      document.getElementById("orderQtyDisplay").innerText = orderQuantity;
+      updateTotals();
+    }
+
+    function updateTotals() {
+      const total = currentProduct.price * orderQuantity;
+      document.getElementById("sumUnitPrice").innerText = `₹${currentProduct.price.toLocaleString('en-IN')}`;
+      document.getElementById("sumQuantity").innerText = orderQuantity;
+      document.getElementById("sumTotalPrice").innerText = `₹${total.toLocaleString('en-IN')}`;
+      document.getElementById("mobileBarPrice").innerText = `₹${total.toLocaleString('en-IN')}`;
+    }
+
+    // Discuss on WhatsApp (+91 89288 84526)
+    function discussOnWhatsApp() {
+      const text = encodeURIComponent(
+        `Hello Digital Theme Store,\n\nI would like to discuss this product before placing an order:\n• Product: ${currentProduct.name}\n• Selected Edition: ${selectedVariant}\n• Unit Price: ₹${currentProduct.price.toLocaleString('en-IN')}\n• Quantity: ${orderQuantity}\n\nPlease share delivery timeline and payment confirmation!`
+      );
+      window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${text}`, '_blank');
+    }
+
+    // Direct Order Submit to WhatsApp
+    function handleDirectOrderSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById("custName").value.trim();
+      const phone = document.getElementById("custPhone").value.trim();
+      const address = document.getElementById("custAddress").value.trim();
+      const city = document.getElementById("custCity").value.trim();
+      const pincode = document.getElementById("custPincode").value.trim();
+      const payMethod = document.querySelector('input[name="payMethod"]:checked')?.value || "Cash on Delivery";
+
+      if (phone.length < 10) {
+        alert("Please enter a valid 10-digit phone number.");
+        return;
+      }
+
+      const total = currentProduct.price * orderQuantity;
+
+      const orderMsg = 
+`*NEW ORDER CONFIRMATION - DIGITAL THEME STORE*
+━━━━━━━━━━━━━━━━━━━━━━
+📦 *PRODUCT DETAILS:*
+• Item: ${currentProduct.name}
+• Edition/Color: ${selectedVariant}
+• Quantity: ${orderQuantity}
+• Price per unit: ₹${currentProduct.price.toLocaleString('en-IN')}
+• *Total Payable:* ₹${total.toLocaleString('en-IN')} (Express Shipping FREE)
+
+📍 *CUSTOMER DELIVERY INFO:*
+• Customer Name: ${name}
+• WhatsApp Contact: +91 ${phone}
+• Delivery Address: ${address}
+• City & Pincode: ${city}, ${pincode}
+• Preferred Payment: ${payMethod}
+
+━━━━━━━━━━━━━━━━━━━━━━
+Please confirm my order and dispatch schedule!`;
+
+      const encoded = encodeURIComponent(orderMsg);
+      window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encoded}`, '_blank');
+    }
+
+    // Render Other Recommended Templates (4 in a row on PC)
+    function renderRelatedProducts() {
+      const grid = document.getElementById("relatedProductsGrid");
+      const otherProds = allProducts.filter(p => p.id !== currentProduct.id).slice(0, 4);
+      grid.innerHTML = otherProds.map(p => `
+        <div class="bg-white border border-slate-200/90 hover:border-amber-500/80 rounded-3xl p-3 text-left space-y-2 shadow-sm hover:shadow-xl flex flex-col justify-between transition-all group cursor-pointer" onclick="window.location.href='buy.html?id=${p.id}'">
+          <div class="space-y-2">
+            <div class="relative w-full aspect-square rounded-2xl overflow-hidden bg-slate-50 border border-slate-200/80 p-2 flex items-center justify-center shadow-inner">
+              <img src="${p.image}" alt="${p.name}" class="w-full h-full object-contain rounded-xl drop-shadow-md group-hover:scale-105 transition-transform duration-300" />
+            </div>
+            <div>
+              <span class="text-[9px] uppercase font-extrabold text-amber-600 tracking-wider block">${p.catLabel}</span>
+              <h4 class="text-xs sm:text-sm font-extrabold text-slate-900 tracking-tight line-clamp-2 leading-snug group-hover:text-amber-600 transition-colors" title="${p.name}">${p.name}</h4>
+            </div>
+            <div class="flex items-center space-x-1 text-amber-500 text-[10px]">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <span class="text-slate-500 font-mono font-bold">(${p.reviews})</span>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-2 border-t border-slate-100">
+            <div class="flex items-baseline justify-between">
+              <div>
+                <span class="text-xs sm:text-base font-black text-amber-600 font-mono">₹${p.price.toLocaleString('en-IN')}</span>
+                <span class="text-[10px] text-slate-400 line-through ml-1 font-mono">₹${p.originalPrice.toLocaleString('en-IN')}</span>
+              </div>
+            </div>
+            <a href="buy.html?id=${p.id}" target="_self" onclick="event.stopPropagation();" class="w-full cta-gold-btn py-2 px-2 rounded-xl text-slate-950 font-black text-[10px] sm:text-xs uppercase tracking-tight flex items-center justify-center space-x-1 shadow-sm">
+              <span>BUY NOW</span>
+              <i class="fa-solid fa-arrow-right text-[9px]"></i>
+            </a>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    // Initialize page
+    renderProduct();
+  </script>
+</body>
+</html>
