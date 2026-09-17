@@ -193,12 +193,6 @@
         </div>
 
         <div class="flex items-center space-x-2 sm:space-x-3">
-          <!-- Back to Catalog -->
-          <a href="index.html" class="bg-slate-100 hover:bg-slate-200 border border-slate-200 hover:border-amber-400 text-slate-700 hover:text-slate-950 font-bold text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-xl transition-all flex items-center space-x-1.5">
-            <i class="fa-solid fa-arrow-left text-xs"></i>
-            <span class="hidden sm:inline">Back to</span> Catalog
-          </a>
-
           <!-- Direct WhatsApp Call/Chat Button with +91 89288 84526 -->
           <a href="https://wa.me/918928884526?text=Hello%20Digital%20Theme,%20I%20have%20an%20inquiry%20regarding%20an%20order." target="_blank" class="cta-whatsapp-btn text-white font-extrabold text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-xl flex items-center space-x-1.5 shadow-md">
             <i class="fa-brands fa-whatsapp text-sm sm:text-base"></i>
@@ -357,76 +351,39 @@
               </div>
             </div>
 
-            <!-- Customer Shipping Information Form -->
-            <form id="directCheckoutForm" onsubmit="handleDirectOrderSubmit(event)" class="space-y-3 pt-2 border-t border-slate-100">
-              <div class="flex items-center justify-between">
-                <label class="block text-xs font-black text-slate-800 uppercase tracking-wide">
-                  3. Delivery &amp; Contact Details:
-                </label>
-                <span class="text-[10px] text-slate-400 font-medium">* Required for Dispatch</span>
-              </div>
-
-              <div>
-                <input type="text" id="custName" required placeholder="Your Full Name *" class="w-full bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none transition-all" />
-              </div>
-
-              <div>
-                <div class="flex items-center bg-slate-50 border border-slate-200 focus-within:border-amber-500 focus-within:bg-white rounded-xl overflow-hidden transition-all">
-                  <div class="px-3 py-2.5 bg-slate-100 border-r border-slate-200 text-xs font-bold text-slate-700">🇮🇳 +91</div>
-                  <input type="tel" id="custPhone" inputmode="numeric" pattern="[0-9]*" maxlength="10" required placeholder="WhatsApp Number (10 digits) *" class="w-full px-3 py-2.5 text-xs sm:text-sm text-slate-900 bg-transparent placeholder-slate-400 focus:outline-none font-mono" />
-                </div>
-              </div>
-
-              <div>
-                <textarea id="custAddress" rows="2" required placeholder="Full Delivery Address (Flat/House No, Building, Street, Area) *" class="w-full bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl px-3.5 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none resize-none transition-all"></textarea>
-              </div>
-
-              <div class="grid grid-cols-2 gap-2">
-                <input type="text" id="custCity" required placeholder="City / District *" class="w-full bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl px-3 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none" />
-                <input type="text" id="custPincode" maxlength="6" pattern="[0-9]{6}" required placeholder="Pincode (6 digits) *" class="w-full bg-slate-50 border border-slate-200 focus:border-amber-500 focus:bg-white rounded-xl px-3 py-2 text-xs sm:text-sm text-slate-900 placeholder-slate-400 outline-none font-mono" />
-              </div>
-
-              <!-- Payment Method Selection -->
-              <div class="space-y-1.5 pt-1">
-                <label class="block text-xs font-black text-slate-800 uppercase tracking-wide">4. Payment Mode:</label>
-                <div class="grid grid-cols-2 gap-2">
-                  <label class="flex items-center space-x-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 p-2.5 rounded-xl cursor-pointer">
-                    <input type="radio" name="payMethod" value="Cash on Delivery (COD)" checked class="accent-amber-600" />
-                    <span class="text-xs font-bold text-slate-800">Cash on Delivery</span>
-                  </label>
-                  <label class="flex items-center space-x-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 p-2.5 rounded-xl cursor-pointer">
-                    <input type="radio" name="payMethod" value="UPI / Instant Online" class="accent-amber-600" />
-                    <span class="text-xs font-bold text-slate-800">UPI / QR Pay</span>
-                  </label>
-                </div>
-              </div>
-
+            <!-- Direct WhatsApp Purchase Section -->
+            <div class="space-y-3.5 pt-2 border-t border-slate-100">
+              
               <!-- Live Order Total Summary -->
-              <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-1 text-xs">
+              <div class="bg-slate-50 p-3.5 rounded-2xl border border-slate-200 space-y-1.5 text-xs">
                 <div class="flex justify-between text-slate-600">
                   <span>Unit Price:</span>
                   <span id="sumUnitPrice" class="font-mono font-bold text-slate-800">₹4,499</span>
+                </div>
+                <div class="flex justify-between text-slate-600">
+                  <span>Selected Edition:</span>
+                  <span id="sumSelectedVariant" class="font-bold text-slate-900">Standard</span>
                 </div>
                 <div class="flex justify-between text-slate-600">
                   <span>Quantity:</span>
                   <span id="sumQuantity" class="font-mono font-bold text-slate-800">1</span>
                 </div>
                 <div class="flex justify-between text-emerald-600 font-bold">
-                  <span>Express Shipping:</span>
-                  <span>FREE (₹0)</span>
+                  <span>Express Delivery:</span>
+                  <span class="uppercase">FREE (₹0)</span>
                 </div>
-                <div class="flex justify-between items-baseline pt-1.5 border-t border-slate-200 text-sm font-black text-slate-900">
+                <div class="flex justify-between items-baseline pt-2 border-t border-slate-200 text-sm font-black text-slate-900">
                   <span>Total Payable:</span>
-                  <span id="sumTotalPrice" class="text-amber-600 text-lg font-mono">₹4,499</span>
+                  <span id="sumTotalPrice" class="text-amber-600 text-xl font-mono">₹4,499</span>
                 </div>
               </div>
 
-              <!-- TWO KEY PRIMARY ACTION BUTTONS -->
-              <div class="space-y-2.5 pt-2">
-                <!-- 1. Instant WhatsApp Buy Now Button -->
-                <button type="submit" class="w-full cta-gold-btn shimmer py-3.5 px-4 rounded-2xl text-slate-950 font-black text-xs sm:text-sm uppercase tracking-wide flex items-center justify-center space-x-2 shadow-xl cursor-pointer">
-                  <i class="fa-brands fa-whatsapp text-lg text-slate-950"></i>
-                  <span>CONFIRM ORDER ON WHATSAPP</span>
+              <!-- TWO KEY PRIMARY ACTION BUTTONS (Direct Purchase & Consultation) -->
+              <div class="space-y-2.5 pt-1">
+                <!-- 1. Instant WhatsApp Direct Buy Now Button -->
+                <button type="button" onclick="buyNowDirectWhatsApp()" class="w-full cta-gold-btn shimmer py-4 px-4 rounded-2xl text-slate-950 font-black text-xs sm:text-sm uppercase tracking-wide flex items-center justify-center space-x-2 shadow-xl cursor-pointer">
+                  <i class="fa-brands fa-whatsapp text-xl text-slate-950"></i>
+                  <span>DIRECT PURCHASE VIA WHATSAPP</span>
                 </button>
 
                 <!-- 2. Discuss on WhatsApp with +91 89288 84526 -->
@@ -437,11 +394,13 @@
               </div>
 
               <div class="flex items-center justify-center space-x-3 text-[10px] text-slate-500 font-medium pt-1">
-                <span class="flex items-center gap-1"><i class="fa-solid fa-lock text-emerald-600"></i> Encrypted WhatsApp</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-bolt text-amber-500"></i> Instant Response</span>
                 <span>•</span>
-                <span class="flex items-center gap-1"><i class="fa-solid fa-headset text-amber-600"></i> Instant Concierge Support</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-shield-check text-emerald-600"></i> 100% Genuine Direct Import</span>
+                <span>•</span>
+                <span class="flex items-center gap-1"><i class="fa-solid fa-truck-fast text-blue-600"></i> 24h Express Dispatch</span>
               </div>
-            </form>
+            </div>
 
           </div>
 
@@ -508,9 +467,9 @@
         <button onclick="discussOnWhatsApp()" class="cta-whatsapp-btn text-white p-2.5 rounded-xl text-xs flex items-center justify-center shadow-sm">
           <i class="fa-brands fa-whatsapp text-base"></i>
         </button>
-        <button onclick="document.getElementById('directCheckoutForm').scrollIntoView({ behavior: 'smooth' })" class="cta-gold-btn shimmer py-2.5 px-3.5 rounded-xl text-slate-950 font-black text-xs uppercase tracking-tight shadow-md flex items-center space-x-1">
+        <button onclick="buyNowDirectWhatsApp()" class="cta-gold-btn shimmer py-2.5 px-3.5 rounded-xl text-slate-950 font-black text-xs uppercase tracking-tight shadow-md flex items-center space-x-1 cursor-pointer">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
           <span>Order Now</span>
-          <i class="fa-solid fa-arrow-down text-[10px]"></i>
         </button>
       </div>
     </div>
@@ -917,6 +876,9 @@
     function selectVariant(v) {
       selectedVariant = v;
       renderVariantChips();
+      if (document.getElementById("sumSelectedVariant")) {
+        document.getElementById("sumSelectedVariant").innerText = selectedVariant;
+      }
     }
 
     function renderQuickThumbnails() {
@@ -940,9 +902,30 @@
     function updateTotals() {
       const total = currentProduct.price * orderQuantity;
       document.getElementById("sumUnitPrice").innerText = `₹${currentProduct.price.toLocaleString('en-IN')}`;
+      if (document.getElementById("sumSelectedVariant")) {
+        document.getElementById("sumSelectedVariant").innerText = selectedVariant;
+      }
       document.getElementById("sumQuantity").innerText = orderQuantity;
       document.getElementById("sumTotalPrice").innerText = `₹${total.toLocaleString('en-IN')}`;
       document.getElementById("mobileBarPrice").innerText = `₹${total.toLocaleString('en-IN')}`;
+    }
+
+    // Direct Purchase via WhatsApp (+91 89288 84526)
+    function buyNowDirectWhatsApp() {
+      const total = currentProduct.price * orderQuantity;
+      const orderMsg = 
+`*NEW ORDER - DIGITAL THEME STORE*
+━━━━━━━━━━━━━━━━━━━━━━
+📦 *ORDER DETAILS:*
+• Product: ${currentProduct.name}
+• Edition/Variant: ${selectedVariant}
+• Quantity: ${orderQuantity}
+• Unit Price: ₹${currentProduct.price.toLocaleString('en-IN')}
+• *Total Payable:* ₹${total.toLocaleString('en-IN')} (Free Express Delivery)
+
+━━━━━━━━━━━━━━━━━━━━━━
+Hi Digital Theme Store, I would like to place an order for this item. Please share payment details and confirm dispatch!`;
+      window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(orderMsg)}`, '_blank');
     }
 
     // Discuss on WhatsApp (+91 89288 84526)
@@ -951,47 +934,6 @@
         `Hello Digital Theme Store,\n\nI would like to discuss this product before placing an order:\n• Product: ${currentProduct.name}\n• Selected Edition: ${selectedVariant}\n• Unit Price: ₹${currentProduct.price.toLocaleString('en-IN')}\n• Quantity: ${orderQuantity}\n\nPlease share delivery timeline and payment confirmation!`
       );
       window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${text}`, '_blank');
-    }
-
-    // Direct Order Submit to WhatsApp
-    function handleDirectOrderSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById("custName").value.trim();
-      const phone = document.getElementById("custPhone").value.trim();
-      const address = document.getElementById("custAddress").value.trim();
-      const city = document.getElementById("custCity").value.trim();
-      const pincode = document.getElementById("custPincode").value.trim();
-      const payMethod = document.querySelector('input[name="payMethod"]:checked')?.value || "Cash on Delivery";
-
-      if (phone.length < 10) {
-        alert("Please enter a valid 10-digit phone number.");
-        return;
-      }
-
-      const total = currentProduct.price * orderQuantity;
-
-      const orderMsg = 
-`*NEW ORDER CONFIRMATION - DIGITAL THEME STORE*
-━━━━━━━━━━━━━━━━━━━━━━
-📦 *PRODUCT DETAILS:*
-• Item: ${currentProduct.name}
-• Edition/Color: ${selectedVariant}
-• Quantity: ${orderQuantity}
-• Price per unit: ₹${currentProduct.price.toLocaleString('en-IN')}
-• *Total Payable:* ₹${total.toLocaleString('en-IN')} (Express Shipping FREE)
-
-📍 *CUSTOMER DELIVERY INFO:*
-• Customer Name: ${name}
-• WhatsApp Contact: +91 ${phone}
-• Delivery Address: ${address}
-• City & Pincode: ${city}, ${pincode}
-• Preferred Payment: ${payMethod}
-
-━━━━━━━━━━━━━━━━━━━━━━
-Please confirm my order and dispatch schedule!`;
-
-      const encoded = encodeURIComponent(orderMsg);
-      window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${encoded}`, '_blank');
     }
 
     // Render Other Recommended Templates (4 in a row on PC)
