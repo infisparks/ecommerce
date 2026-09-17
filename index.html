@@ -286,7 +286,7 @@
     <!-- Main Container -->
     <main class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6 mx-auto mt-2">
       
-      <!-- 1. Ultra-Premium Dynamic 4-Banner Peek Slider (Compact PC View with Left/Right Preview) -->
+      <!-- 1. Ultra-Premium Dynamic 3-Banner Peek Slider (Responsive Aspect Ratio: Never Cut on Mobile) -->
       <section class="space-y-2">
         <!-- Banner Carousel Outer Frame -->
         <div class="relative w-full overflow-hidden rounded-2xl sm:rounded-3xl py-1" id="bannerCarouselRoot">
@@ -295,45 +295,36 @@
           <div id="bannerSliderTrack" class="flex items-center transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] will-change-transform">
             
             <!-- Slide 0 (Banner 1) -->
-            <div class="banner-slide-item w-[92%] sm:w-[86%] md:w-[80%] flex-shrink-0 px-1 sm:px-2.5 transition-all duration-500 cursor-pointer" onclick="handleSlideClick(0)">
-              <div class="slide-card relative w-full h-[175px] sm:h-[215px] md:h-[255px] lg:h-[285px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border-2 border-amber-400 bg-slate-900 transition-all duration-500 scale-100 opacity-100">
+            <div class="banner-slide-item w-[92%] sm:w-[86%] md:w-[80%] flex-shrink-0 px-1 sm:px-2 transition-all duration-500 cursor-pointer" onclick="handleSlideClick(0)">
+              <div class="slide-card relative w-full aspect-[2.25/1] max-h-[250px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border-2 border-amber-400 bg-slate-900 transition-all duration-500 scale-100 opacity-100">
                 <img src="product/banner/1.webp" alt="Featured Catalog Banner 1" class="w-full h-full object-cover object-center" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent pointer-events-none"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent pointer-events-none"></div>
               </div>
             </div>
 
             <!-- Slide 1 (Banner 2) -->
-            <div class="banner-slide-item w-[92%] sm:w-[86%] md:w-[80%] flex-shrink-0 px-1 sm:px-2.5 transition-all duration-500 cursor-pointer" onclick="handleSlideClick(1)">
-              <div class="slide-card relative w-full h-[175px] sm:h-[215px] md:h-[255px] lg:h-[285px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-slate-300/70 bg-slate-900 transition-all duration-500 scale-95 opacity-50 hover:opacity-80">
+            <div class="banner-slide-item w-[92%] sm:w-[86%] md:w-[80%] flex-shrink-0 px-1 sm:px-2 transition-all duration-500 cursor-pointer" onclick="handleSlideClick(1)">
+              <div class="slide-card relative w-full aspect-[2.25/1] max-h-[250px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-slate-300/70 bg-slate-900 transition-all duration-500 scale-95 opacity-50 hover:opacity-80">
                 <img src="product/banner/2.webp" alt="Featured Catalog Banner 2" class="w-full h-full object-cover object-center" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent pointer-events-none"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent pointer-events-none"></div>
               </div>
             </div>
 
             <!-- Slide 2 (Banner 3) -->
-            <div class="banner-slide-item w-[92%] sm:w-[86%] md:w-[80%] flex-shrink-0 px-1 sm:px-2.5 transition-all duration-500 cursor-pointer" onclick="handleSlideClick(2)">
-              <div class="slide-card relative w-full h-[175px] sm:h-[215px] md:h-[255px] lg:h-[285px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-slate-300/70 bg-slate-900 transition-all duration-500 scale-95 opacity-50 hover:opacity-80">
+            <div class="banner-slide-item w-[92%] sm:w-[86%] md:w-[80%] flex-shrink-0 px-1 sm:px-2 transition-all duration-500 cursor-pointer" onclick="handleSlideClick(2)">
+              <div class="slide-card relative w-full aspect-[2.25/1] max-h-[250px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-slate-300/70 bg-slate-900 transition-all duration-500 scale-95 opacity-50 hover:opacity-80">
                 <img src="product/banner/3.webp" alt="Featured Catalog Banner 3" class="w-full h-full object-cover object-center" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent pointer-events-none"></div>
-              </div>
-            </div>
-
-            <!-- Slide 3 (Banner 4) -->
-            <div class="banner-slide-item w-[92%] sm:w-[86%] md:w-[80%] flex-shrink-0 px-1 sm:px-2.5 transition-all duration-500 cursor-pointer" onclick="handleSlideClick(3)">
-              <div class="slide-card relative w-full h-[175px] sm:h-[215px] md:h-[255px] lg:h-[285px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-slate-300/70 bg-slate-900 transition-all duration-500 scale-95 opacity-50 hover:opacity-80">
-                <img src="product/banner/4.webp" alt="Featured Catalog Banner 4" class="w-full h-full object-cover object-center" />
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent pointer-events-none"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-transparent pointer-events-none"></div>
               </div>
             </div>
 
           </div>
 
-          <!-- Dot Indicators (4 auto-slide dots) -->
-          <div class="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex items-center space-x-2 z-20 bg-slate-900/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 shadow-md">
+          <!-- Dot Indicators (3 auto-slide dots) -->
+          <div class="absolute bottom-2.5 sm:bottom-3.5 left-1/2 -translate-x-1/2 flex items-center space-x-2 z-20 bg-slate-900/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 shadow-md">
             <button type="button" onclick="event.stopPropagation(); goToBannerSlide(0)" class="banner-dot w-6 h-2 rounded-full bg-amber-500 transition-all duration-300 shadow-sm" aria-label="Slide 1"></button>
             <button type="button" onclick="event.stopPropagation(); goToBannerSlide(1)" class="banner-dot w-2.5 h-2 rounded-full bg-white/60 hover:bg-white transition-all duration-300" aria-label="Slide 2"></button>
             <button type="button" onclick="event.stopPropagation(); goToBannerSlide(2)" class="banner-dot w-2.5 h-2 rounded-full bg-white/60 hover:bg-white transition-all duration-300" aria-label="Slide 3"></button>
-            <button type="button" onclick="event.stopPropagation(); goToBannerSlide(3)" class="banner-dot w-2.5 h-2 rounded-full bg-white/60 hover:bg-white transition-all duration-300" aria-label="Slide 4"></button>
           </div>
         </div>
       </section>
@@ -1461,7 +1452,7 @@
 
     // Hero Banner Peek Slider Logic (Smooth Auto-Slide with Left & Right Peeking)
     let currentBannerIndex = 0;
-    const totalBannerSlides = 4;
+    const totalBannerSlides = 3;
     let bannerInterval = null;
 
     function getSlideWidthPercentage() {
@@ -1483,13 +1474,13 @@
       const slideCards = document.querySelectorAll(".banner-slide-item .slide-card");
       slideCards.forEach((card, idx) => {
         if (idx === currentBannerIndex) {
-          card.className = "slide-card relative w-full h-[180px] sm:h-[220px] md:h-[270px] lg:h-[300px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-2 border-amber-400 bg-slate-900 transition-all duration-500 scale-100 opacity-100";
+          card.className = "slide-card relative w-full aspect-[2.25/1] max-h-[250px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-2 border-amber-400 bg-slate-900 transition-all duration-500 scale-100 opacity-100";
         } else {
-          card.className = "slide-card relative w-full h-[180px] sm:h-[220px] md:h-[270px] lg:h-[300px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-slate-300/70 bg-slate-900 transition-all duration-500 scale-95 opacity-50 hover:opacity-80";
+          card.className = "slide-card relative w-full aspect-[2.25/1] max-h-[250px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-slate-300/70 bg-slate-900 transition-all duration-500 scale-95 opacity-50 hover:opacity-80";
         }
       });
 
-      // Update 4 dot indicators
+      // Update 3 dot indicators
       const bannerDots = document.querySelectorAll(".banner-dot");
       bannerDots.forEach((dot, idx) => {
         if (idx === currentBannerIndex) {
