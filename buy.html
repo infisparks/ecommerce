@@ -415,15 +415,15 @@
 
       </div>
 
-      <!-- 4-TEMPLATE PC ROW: Other Recommended Templates / Products -->
+      <!-- Recommended Products Section -->
       <section class="mt-12 pt-8 border-t border-slate-200 space-y-4 text-left">
         <div class="flex items-center justify-between">
           <div>
-            <h3 class="text-base sm:text-xl font-black text-slate-900 tracking-tight">Explore More Curated Templates &amp; Products</h3>
-            <p class="text-xs text-slate-500 font-medium">Browse verified best-sellers across all categories</p>
+            <h3 class="text-base sm:text-xl lg:text-2xl font-black text-slate-900 tracking-tight">Recommended Products</h3>
+            <p class="text-xs text-slate-500 font-medium">Browse other verified products &amp; items you may also like</p>
           </div>
           <a href="index.html" class="text-xs font-bold text-amber-600 hover:text-amber-700 flex items-center gap-1">
-            View All <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            View All in Catalog <i class="fa-solid fa-arrow-right text-[10px]"></i>
           </a>
         </div>
 
@@ -872,12 +872,13 @@
 
     function renderQuickThumbnails() {
       const list = document.getElementById("quickThumbsList");
+      if (!list) return;
       list.innerHTML = allProducts.map(p => {
         const isCur = p.id === currentProduct.id;
         return `
-          <a href="buy.html?id=${p.id}" class="flex-shrink-0 w-14 h-14 rounded-xl p-1 bg-white border-2 ${isCur ? 'border-amber-500 shadow-md scale-105' : 'border-slate-200 hover:border-amber-300 opacity-70 hover:opacity-100'} transition-all flex items-center justify-center overflow-hidden" title="${p.name}">
+          <button type="button" onclick="switchProduct(${p.id})" class="flex-shrink-0 w-14 h-14 rounded-xl p-1 bg-white border-2 ${isCur ? 'border-amber-500 shadow-md ring-2 ring-amber-400/40 scale-105' : 'border-slate-200 hover:border-amber-400 opacity-70 hover:opacity-100'} transition-all flex items-center justify-center overflow-hidden cursor-pointer" title="${p.name}">
             <img src="${p.image}" alt="${p.name}" class="w-full h-full object-contain rounded-lg" />
-          </a>
+          </button>
         `;
       }).join("");
     }
@@ -925,12 +926,39 @@ Hi Digital Theme Store, I would like to place an order for this item. Please sha
       window.open(`https://wa.me/${WHATSAPP_PHONE}?text=${text}`, '_blank');
     }
 
-    // Render Other Recommended Templates (4 in a row on PC)
+    // Switch active product smoothly
+    function switchProduct(newId) {
+      const prod = allProducts.find(p => p.id === newId);
+      if (!prod) return;
+      currentProduct = prod;
+      selectedVariant = prod.variants[0];
+      orderQuantity = 1;
+      document.getElementById("orderQtyDisplay").innerText = orderQuantity;
+      history.pushState(null, '', `buy.html?id=${newId}`);
+      renderProduct();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.addEventListener('popstate', () => {
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get('id')) || 2;
+      const prod = allProducts.find(p => p.id === id);
+      if (prod) {
+        currentProduct = prod;
+        selectedVariant = prod.variants[0];
+        orderQuantity = 1;
+        document.getElementById("orderQtyDisplay").innerText = orderQuantity;
+        renderProduct();
+      }
+    });
+
+    // Render Recommended Products Grid
     function renderRelatedProducts() {
       const grid = document.getElementById("relatedProductsGrid");
-      const otherProds = allProducts.filter(p => p.id !== currentProduct.id).slice(0, 4);
+      if (!grid) return;
+      const otherProds = allProducts.filter(p => p.id !== currentProduct.id);
       grid.innerHTML = otherProds.map(p => `
-        <div class="bg-white border border-slate-200/90 hover:border-amber-500/80 rounded-3xl p-3 text-left space-y-2 shadow-sm hover:shadow-xl flex flex-col justify-between transition-all group cursor-pointer" onclick="window.location.href='buy.html?id=${p.id}'">
+        <div class="bg-white border border-slate-200/90 hover:border-amber-500/80 rounded-3xl p-3.5 text-left space-y-2.5 shadow-sm hover:shadow-xl flex flex-col justify-between transition-all group cursor-pointer" onclick="switchProduct(${p.id})">
           <div class="space-y-2">
             <div class="relative w-full aspect-square rounded-2xl overflow-hidden bg-slate-50 border border-slate-200/80 p-2 flex items-center justify-center shadow-inner">
               <img src="${p.image}" alt="${p.name}" class="w-full h-full object-contain rounded-xl drop-shadow-md group-hover:scale-105 transition-transform duration-300" />
@@ -952,10 +980,10 @@ Hi Digital Theme Store, I would like to place an order for this item. Please sha
                 <span class="text-[10px] text-slate-400 line-through ml-1 font-mono">₹${p.originalPrice.toLocaleString('en-IN')}</span>
               </div>
             </div>
-            <a href="buy.html?id=${p.id}" target="_self" onclick="event.stopPropagation();" class="w-full cta-gold-btn py-2 px-2 rounded-xl text-slate-950 font-black text-[10px] sm:text-xs uppercase tracking-tight flex items-center justify-center space-x-1 shadow-sm">
+            <button type="button" onclick="event.stopPropagation(); switchProduct(${p.id});" class="w-full cta-gold-btn py-2 px-2 rounded-xl text-slate-950 font-black text-[10px] sm:text-xs uppercase tracking-tight flex items-center justify-center space-x-1 shadow-sm cursor-pointer">
               <span>BUY NOW</span>
               <i class="fa-solid fa-arrow-right text-[9px]"></i>
-            </a>
+            </button>
           </div>
         </div>
       `).join("");
