@@ -286,77 +286,60 @@
     <!-- Main Container -->
     <main class="w-full max-w-7xl px-4 sm:px-6 lg:px-8 space-y-4 sm:space-y-6 mx-auto mt-2">
       
-      <!-- 1. Ultra-Premium Compact Hero Banner -->
-      <section class="relative overflow-hidden rounded-3xl border border-amber-300/80 bg-gradient-to-b from-white via-amber-50/30 to-white p-4 sm:p-6 lg:p-8 my-0.5 shadow-[0_10px_30px_rgba(0,0,0,0.06),0_0_20px_rgba(245,166,35,0.08)]">
-        <!-- Ambient Background Glows -->
-        <div class="absolute -top-10 -right-10 w-40 h-40 bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -bottom-10 -left-10 w-36 h-36 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        
-        <!-- Hero Background Image Texture -->
-        <div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-          <img src="image/hero.png" alt="Digital Theme Store Banner" class="w-full h-full object-cover object-right sm:object-center opacity-10 mix-blend-multiply scale-105" />
-          <div class="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
-        </div>
-
-        <div class="relative z-10 space-y-2 sm:space-y-3 text-left">
-          <div class="flex items-center justify-between">
-            <div class="inline-flex items-center gap-1.5 bg-amber-500/10 border border-amber-500/35 backdrop-blur-md px-2.5 py-0.5 rounded-full text-amber-700 text-[10px] sm:text-xs font-black uppercase tracking-wider shadow-sm">
-              <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
-              <i class="fa-solid fa-bolt text-[9px] text-amber-600"></i>
-              <span>Direct Manufacturer Rates</span>
+      <!-- 1. Ultra-Premium Dynamic 4-Banner Peek Slider (Compact PC View with Left/Right Preview) -->
+      <section class="space-y-2">
+        <!-- Banner Carousel Outer Frame -->
+        <div class="relative w-full overflow-hidden rounded-2xl sm:rounded-3xl py-1" id="bannerCarouselRoot">
+          
+          <!-- Slider Track (Centers active slide with left & right banners peeking) -->
+          <div id="bannerSliderTrack" class="flex items-center transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] will-change-transform">
+            
+            <!-- Slide 0 (Banner 1) -->
+            <div class="banner-slide-item w-[92%] sm:w-[86%] md:w-[80%] flex-shrink-0 px-1 sm:px-2.5 transition-all duration-500 cursor-pointer" onclick="handleSlideClick(0)">
+              <div class="slide-card relative w-full h-[175px] sm:h-[215px] md:h-[255px] lg:h-[285px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border-2 border-amber-400 bg-slate-900 transition-all duration-500 scale-100 opacity-100">
+                <img src="product/banner/1.webp" alt="Featured Catalog Banner 1" class="w-full h-full object-cover object-center" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent pointer-events-none"></div>
+              </div>
             </div>
-            <span class="text-[10px] sm:text-xs text-slate-500 font-bold hidden sm:inline-flex items-center gap-1">
-              <i class="fa-solid fa-circle-check text-emerald-600"></i> Verified A4 Catalog
-            </span>
+
+            <!-- Slide 1 (Banner 2) -->
+            <div class="banner-slide-item w-[92%] sm:w-[86%] md:w-[80%] flex-shrink-0 px-1 sm:px-2.5 transition-all duration-500 cursor-pointer" onclick="handleSlideClick(1)">
+              <div class="slide-card relative w-full h-[175px] sm:h-[215px] md:h-[255px] lg:h-[285px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-slate-300/70 bg-slate-900 transition-all duration-500 scale-95 opacity-50 hover:opacity-80">
+                <img src="product/banner/2.webp" alt="Featured Catalog Banner 2" class="w-full h-full object-cover object-center" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+            <!-- Slide 2 (Banner 3) -->
+            <div class="banner-slide-item w-[92%] sm:w-[86%] md:w-[80%] flex-shrink-0 px-1 sm:px-2.5 transition-all duration-500 cursor-pointer" onclick="handleSlideClick(2)">
+              <div class="slide-card relative w-full h-[175px] sm:h-[215px] md:h-[255px] lg:h-[285px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-slate-300/70 bg-slate-900 transition-all duration-500 scale-95 opacity-50 hover:opacity-80">
+                <img src="product/banner/3.webp" alt="Featured Catalog Banner 3" class="w-full h-full object-cover object-center" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
+            <!-- Slide 3 (Banner 4) -->
+            <div class="banner-slide-item w-[92%] sm:w-[86%] md:w-[80%] flex-shrink-0 px-1 sm:px-2.5 transition-all duration-500 cursor-pointer" onclick="handleSlideClick(3)">
+              <div class="slide-card relative w-full h-[175px] sm:h-[215px] md:h-[255px] lg:h-[285px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-slate-300/70 bg-slate-900 transition-all duration-500 scale-95 opacity-50 hover:opacity-80">
+                <img src="product/banner/4.webp" alt="Featured Catalog Banner 4" class="w-full h-full object-cover object-center" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent pointer-events-none"></div>
+              </div>
+            </div>
+
           </div>
 
-          <h2 class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-black text-slate-950 leading-tight tracking-tight">
-            Curated High-Value <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-600">Templates &amp; Products</span>
-          </h2>
-
-          <p class="text-slate-600 text-[11px] sm:text-xs md:text-sm font-medium leading-snug max-w-2xl">
-            Verified best-sellers in Action Cameras, Audio, Wearables &amp; Luxury Goods. Precision curated with high-converting A4 product templates.
-          </p>
-
-          <!-- 3-Item Compact Trust Grid -->
-          <div class="grid grid-cols-3 gap-2 sm:gap-4 pt-1 max-w-lg">
-            <div class="bg-white/90 border border-slate-200/90 rounded-2xl py-2 px-2 flex items-center justify-center gap-1.5 text-center shadow-xs">
-              <i class="fa-solid fa-truck-fast text-amber-600 text-xs sm:text-sm"></i>
-              <span class="text-[10px] sm:text-xs font-bold text-slate-700 truncate">Express Delivery</span>
-            </div>
-            <div class="bg-white/90 border border-slate-200/90 rounded-2xl py-2 px-2 flex items-center justify-center gap-1.5 text-center shadow-xs">
-              <i class="fa-solid fa-shield-halved text-amber-600 text-xs sm:text-sm"></i>
-              <span class="text-[10px] sm:text-xs font-bold text-slate-700 truncate">Direct Warranty</span>
-            </div>
-            <div class="bg-white/90 border border-slate-200/90 rounded-2xl py-2 px-2 flex items-center justify-center gap-1.5 text-center shadow-xs">
-              <i class="fa-brands fa-whatsapp text-emerald-600 text-xs sm:text-sm"></i>
-              <span class="text-[10px] sm:text-xs font-bold text-slate-700 truncate">WhatsApp Order</span>
-            </div>
-          </div>
-
-          <!-- Quick Filter Category Pills -->
-          <div class="pt-2 flex items-center space-x-1.5 overflow-x-auto no-scrollbar">
-            <button onclick="filterCatalog('all')" id="catBtnAll" class="cat-pill px-3.5 py-1.5 rounded-full text-xs font-black bg-gradient-to-r from-amber-500 to-amber-600 text-white border border-amber-500 shadow-md flex-shrink-0 transition-all">
-              All Templates (16)
-            </button>
-            <button onclick="filterCatalog('electronics')" id="catBtnElec" class="cat-pill px-3 py-1.5 rounded-full text-xs font-extrabold bg-white text-slate-700 border border-slate-200 hover:border-amber-400 hover:text-slate-900 flex-shrink-0 transition-all">
-              ⚡ Action Cameras &amp; Audio
-            </button>
-            <button onclick="filterCatalog('security')" id="catBtnSec" class="cat-pill px-3 py-1.5 rounded-full text-xs font-extrabold bg-white text-slate-700 border border-slate-200 hover:border-amber-400 hover:text-slate-900 flex-shrink-0 transition-all">
-              🛡️ Security &amp; Body Cams
-            </button>
-            <button onclick="filterCatalog('gadgets')" id="catBtnGad" class="cat-pill px-3 py-1.5 rounded-full text-xs font-extrabold bg-white text-slate-700 border border-slate-200 hover:border-amber-400 hover:text-slate-900 flex-shrink-0 transition-all">
-              🎮 Drones &amp; Smart Gadgets
-            </button>
-            <button onclick="filterCatalog('fashion')" id="catBtnFashion" class="cat-pill px-3 py-1.5 rounded-full text-xs font-extrabold bg-white text-slate-700 border border-slate-200 hover:border-amber-400 hover:text-slate-900 flex-shrink-0 transition-all">
-              💎 Fashion &amp; Luxury
-            </button>
+          <!-- Dot Indicators (4 auto-slide dots) -->
+          <div class="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 flex items-center space-x-2 z-20 bg-slate-900/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 shadow-md">
+            <button type="button" onclick="event.stopPropagation(); goToBannerSlide(0)" class="banner-dot w-6 h-2 rounded-full bg-amber-500 transition-all duration-300 shadow-sm" aria-label="Slide 1"></button>
+            <button type="button" onclick="event.stopPropagation(); goToBannerSlide(1)" class="banner-dot w-2.5 h-2 rounded-full bg-white/60 hover:bg-white transition-all duration-300" aria-label="Slide 2"></button>
+            <button type="button" onclick="event.stopPropagation(); goToBannerSlide(2)" class="banner-dot w-2.5 h-2 rounded-full bg-white/60 hover:bg-white transition-all duration-300" aria-label="Slide 3"></button>
+            <button type="button" onclick="event.stopPropagation(); goToBannerSlide(3)" class="banner-dot w-2.5 h-2 rounded-full bg-white/60 hover:bg-white transition-all duration-300" aria-label="Slide 4"></button>
           </div>
         </div>
       </section>
 
       <!-- 2. E-Commerce Product Catalog Section -->
-      <section class="space-y-4 pt-1" id="catalogSection">
+      <section class="space-y-3.5 pt-1" id="catalogSection">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-1">
           <div>
             <h3 class="text-base sm:text-xl lg:text-2xl font-black text-slate-900 tracking-tight">Featured A4 Product Templates</h3>
@@ -366,53 +349,31 @@
         </div>
 
         <!-- Modern Search & Filter Controls Toolbar -->
-        <div class="bg-white border border-slate-200/90 rounded-2xl sm:rounded-3xl p-3 sm:p-4 shadow-sm space-y-3">
-          <div class="flex flex-col md:flex-row items-stretch md:items-center gap-2.5 sm:gap-3">
-            <!-- Search Input Box -->
-            <div class="relative flex-1">
-              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
-                <i class="fa-solid fa-magnifying-glass text-sm"></i>
-              </div>
-              <input 
-                type="text" 
-                id="catalogSearchInput" 
-                placeholder="Search products by name, camera, drone, watch, audio, 4K..." 
-                oninput="applyCatalogFilters()" 
-                class="w-full pl-10 pr-10 py-2.5 sm:py-3 bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all font-medium"
-              />
-              <button 
-                type="button" 
-                id="clearSearchBtn" 
-                onclick="clearSearchInput()" 
-                class="hidden absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-600 transition-colors cursor-pointer"
-                title="Clear search"
-              >
-                <i class="fa-solid fa-circle-xmark text-sm"></i>
-              </button>
+        <div class="bg-white border border-slate-200/90 rounded-2xl sm:rounded-3xl p-3 sm:p-4 shadow-sm space-y-2.5">
+          <!-- Search Input Box -->
+          <div class="relative w-full">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <i class="fa-solid fa-magnifying-glass text-sm"></i>
             </div>
-
-            <!-- Category Select Dropdown (for quick mobile & compact switching) -->
-            <div class="flex items-center gap-2 flex-shrink-0">
-              <div class="relative w-full md:w-auto">
-                <select 
-                  id="categorySelectDropdown" 
-                  onchange="onCategorySelectChange(this.value)" 
-                  class="w-full md:w-56 appearance-none bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl py-2.5 sm:py-3 pl-3.5 pr-9 text-xs sm:text-sm font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 cursor-pointer transition-all"
-                >
-                  <option value="all">All Categories (16)</option>
-                  <option value="electronics">⚡ Action Cameras &amp; Audio (7)</option>
-                  <option value="security">🛡️ Security &amp; Body Cams (2)</option>
-                  <option value="gadgets">🎮 Drones &amp; Smart Gadgets (4)</option>
-                  <option value="fashion">💎 Fashion &amp; Luxury (1)</option>
-                </select>
-                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-slate-500">
-                  <i class="fa-solid fa-chevron-down text-xs"></i>
-                </div>
-              </div>
-            </div>
+            <input 
+              type="text" 
+              id="catalogSearchInput" 
+              placeholder="Search products by name, camera, drone, watch, audio, 4K..." 
+              oninput="applyCatalogFilters()" 
+              class="w-full pl-10 pr-10 py-2.5 sm:py-3 bg-slate-50 border border-slate-200 rounded-xl sm:rounded-2xl text-xs sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500/30 focus:border-amber-500 transition-all font-medium"
+            />
+            <button 
+              type="button" 
+              id="clearSearchBtn" 
+              onclick="clearSearchInput()" 
+              class="hidden absolute inset-y-0 right-0 pr-3.5 flex items-center text-slate-400 hover:text-slate-600 transition-colors cursor-pointer"
+              title="Clear search"
+            >
+              <i class="fa-solid fa-circle-xmark text-sm"></i>
+            </button>
           </div>
 
-          <!-- Category Filter Pills (Desktop & Tablet Quick Tabs) -->
+          <!-- Category Filter Pills (Quick Tabs) -->
           <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar pt-1 border-t border-slate-100">
             <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex-shrink-0 mr-1 hidden sm:inline">Category:</span>
             <button onclick="filterCatalog('all')" id="catBtnAll" class="cat-pill px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-black bg-gradient-to-r from-amber-500 to-amber-600 text-white border border-amber-500 shadow-md flex-shrink-0 transition-all">
@@ -1507,6 +1468,81 @@
         toast.classList.add("hidden");
       }, 2500);
     }
+
+    // Hero Banner Peek Slider Logic (Smooth Auto-Slide with Left & Right Peeking)
+    let currentBannerIndex = 0;
+    const totalBannerSlides = 4;
+    let bannerInterval = null;
+
+    function getSlideWidthPercentage() {
+      if (window.innerWidth < 640) return 92;
+      if (window.innerWidth < 1024) return 86;
+      return 80;
+    }
+
+    function updateBannerSlider() {
+      const track = document.getElementById("bannerSliderTrack");
+      if (!track) return;
+
+      const slideWidth = getSlideWidthPercentage();
+      const peekOffset = (100 - slideWidth) / 2;
+      const translateX = peekOffset - (currentBannerIndex * slideWidth);
+
+      track.style.transform = `translateX(${translateX}%)`;
+
+      const slideCards = document.querySelectorAll(".banner-slide-item .slide-card");
+      slideCards.forEach((card, idx) => {
+        if (idx === currentBannerIndex) {
+          card.className = "slide-card relative w-full h-[180px] sm:h-[220px] md:h-[270px] lg:h-[300px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-2 border-amber-400 bg-slate-900 transition-all duration-500 scale-100 opacity-100";
+        } else {
+          card.className = "slide-card relative w-full h-[180px] sm:h-[220px] md:h-[270px] lg:h-[300px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-md border border-slate-300/70 bg-slate-900 transition-all duration-500 scale-95 opacity-50 hover:opacity-80";
+        }
+      });
+
+      // Update 4 dot indicators
+      const bannerDots = document.querySelectorAll(".banner-dot");
+      bannerDots.forEach((dot, idx) => {
+        if (idx === currentBannerIndex) {
+          dot.className = "banner-dot w-6 h-2 rounded-full bg-amber-500 transition-all duration-300 shadow-sm";
+        } else {
+          dot.className = "banner-dot w-2.5 h-2 rounded-full bg-white/60 hover:bg-white transition-all duration-300";
+        }
+      });
+    }
+
+    function goToBannerSlide(slideIndex) {
+      currentBannerIndex = slideIndex;
+      updateBannerSlider();
+      resetBannerAutoplay();
+    }
+
+    function changeBannerSlide(delta) {
+      currentBannerIndex = (currentBannerIndex + delta + totalBannerSlides) % totalBannerSlides;
+      updateBannerSlider();
+      resetBannerAutoplay();
+    }
+
+    function handleSlideClick(index) {
+      if (index === currentBannerIndex) {
+        const catalogSection = document.getElementById("catalogSection");
+        if (catalogSection) catalogSection.scrollIntoView({ behavior: "smooth" });
+      } else {
+        currentBannerIndex = index;
+        updateBannerSlider();
+        resetBannerAutoplay();
+      }
+    }
+
+    function resetBannerAutoplay() {
+      if (bannerInterval) clearInterval(bannerInterval);
+      bannerInterval = setInterval(() => {
+        changeBannerSlide(1);
+      }, 4500);
+    }
+
+    window.addEventListener("resize", updateBannerSlider);
+    updateBannerSlider();
+    resetBannerAutoplay();
 
     // Initialize Grid with all 16 A4 products (4 per row on PC)
     renderProductGrid();
